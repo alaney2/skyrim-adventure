@@ -1,0 +1,244 @@
+{
+  "startingLocation": "Helgen",
+  "endingLocation": "Windhelm",
+  "locations": [
+    {
+      "name": "Helgen",
+      "description": "",
+      "directions": [
+        {
+          "directionName": "East",
+          "location": "Falkreath"
+        },
+        {
+          "directionName": "North",
+          "location": "Riverwood"
+        },
+        {
+          "directionName": "West",
+          "location": "Ivarstead"
+        }
+      ]
+    },
+    {
+      "name": "Falkreath",
+      "description": "",
+      "directions": [
+        {
+          "directionName": "West",
+          "location": "Helgen"
+        },
+        {
+          "directionName": "Northeast",
+          "location": "Riverwood"
+        }
+      ]
+    },
+    {
+      "name": "Riverwood",
+      "description": "",
+      "directions": [
+        {
+          "directionName": "North",
+          "location": "Whiterun"
+        },
+        {
+          "directionName": "South",
+          "location": "Helgen"
+        },
+        {
+          "directionName": "Northwest",
+          "location": "Rorikstead"
+        }
+      ]
+    },
+    {
+      "name": "Ivarstead",
+      "description": "",
+      "directions": [
+        {
+          "directionName": "East",
+          "location": "Lake Geir"
+        },
+        {
+          "directionName": "West",
+          "location": "Helgen"
+        }
+      ]
+    },
+    {
+      "name": "Lake Geir",
+      "description": "",
+      "directions": [
+        {
+          "directionName": "Northeast",
+          "location": "Eastmarch"
+        },
+        {
+          "directionName": "Southeast",
+          "location": "Riften"
+        },
+        {
+          "directionName": "West",
+          "location": "Ivarstead"
+        }
+      ]
+    },
+    {
+      "name": "Riften",
+      "description": "",
+      "directions": [
+        {
+          "directionName": "Northwest",
+          "location": "Lake Geir"
+        }
+      ]
+    },
+    {
+      "name": "Eastmarch",
+      "description": "",
+      "directions": [
+        {
+          "directionName": "Southwest",
+          "location": "Lake Geir"
+        },
+        {
+          "directionName": "Northwest",
+          "location": "Windhelm"
+        }
+      ]
+    },
+    {
+      "name": "Windhelm",
+      "description": "",
+      "directions": [
+        {
+          "directionName": "Southeast",
+          "location": "Eastmarch"
+        },
+        {
+          "directionName": "Northwest",
+          "location": "Winterhold"
+        }
+      ]
+    },
+    {
+      "name": "Winterhold",
+      "description": "",
+      "directions": [
+        {
+          "directionName": "Southeast",
+          "location": "Windhelm"
+        },
+        {
+          "directionName": "Northwest",
+          "location": "Dawnstar"
+        },
+        {
+          "directionName": "Southwest",
+          "location": "Whiterun"
+        }
+      ]
+    },
+    {
+      "name": "Dawnstar",
+      "description": "",
+      "directions": [
+        {
+          "directionName": "Southeast",
+          "location": "Winterhold"
+        },
+        {
+          "directionName": "Southwest",
+          "location": "Morthal"
+        }
+      ]
+    },
+    {
+      "name": "Morthal",
+      "description": "",
+      "directions": [
+        {
+          "directionName": "Northeast",
+          "location": "Dawnstar"
+        },
+        {
+          "directionName": "Northwest",
+          "location": "Solitude"
+        },
+        {
+          "directionName": "South",
+          "location": "Rorikstead"
+        },
+        {
+          "directionName": "Southeast",
+          "location": "Whiterun"
+        },
+        {
+          "directionName": "Southwest",
+          "location": "Markarth"
+        }
+      ]
+    },
+    {
+      "name": "Solitude",
+      "description": "",
+      "directions": [
+        {
+          "directionName": "Southeast",
+          "location": "Morthal"
+        }
+      ]
+    },
+    {
+      "name": "Rorikstead",
+      "description": "",
+      "directions": [
+        {
+          "directionName": "North",
+          "location": "Morthal"
+        },
+        {
+          "directionName": "East",
+          "location": "Whiterun"
+        },
+        {
+          "directionName": "West",
+          "location": "Markarth"
+        }
+      ]
+    },
+    {
+      "name": "Markarth",
+      "description": "",
+      "directions": [
+        {
+          "directionName": "East",
+          "location": "Rorikstead"
+        },
+        {
+          "directionName": "Northeast",
+          "location": "Morthal"
+        }
+      ]
+    },
+    {
+      "name": "Whiterun",
+      "description": "",
+      "directions": [
+        {
+          "directionName": "West",
+          "location": "Rorikstead"
+        },
+        {
+          "directionName": "Northwest",
+          "location": "Morthal"
+        },
+        {
+          "directionName": "South",
+          "location": "Riverwood"
+        }
+      ]
+    }
+  ]
+}
