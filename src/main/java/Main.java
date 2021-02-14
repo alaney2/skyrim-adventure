@@ -12,7 +12,8 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         // Wishing you good luck on your Adventure!
         Gson gson = new Gson();
-        Reader reader = new FileReader("src/main/resources/siebel.json");
+        Reader reader = new FileReader("src/main/resources/skyrim.json");
         skyrimMap = gson.fromJson(reader, SkyrimMap.class);
+        System.out.println(skyrimMap.getLocations().get(0).getName());
     }
 }
