@@ -1,4 +1,5 @@
 import com.google.gson.Gson;
+import student.adventure.GameEngine;
 import student.adventure.SkyrimMap;
 
 import java.io.FileNotFoundException;
@@ -14,5 +15,6 @@ public class Main {
         Gson gson = new Gson();
         Reader reader = new FileReader("src/main/resources/skyrim.json");
         skyrimMap = gson.fromJson(reader, SkyrimMap.class);
+        GameEngine.runGame();
     }
 }
