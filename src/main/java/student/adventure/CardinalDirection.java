@@ -1,4 +1,6 @@
-public enum DirectionName {
+package student.adventure;
+
+public enum CardinalDirection {
     North,
     East,
     South,
