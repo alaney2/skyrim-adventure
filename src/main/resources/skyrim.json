@@ -18,6 +18,11 @@
           "directionName": "West",
           "location": "Ivarstead"
         }
+      ],
+      "items": [
+        {
+          "itemName": "Sword",
+        }
       ]
     },
     {
@@ -32,6 +37,9 @@
           "directionName": "Northeast",
           "location": "Riverwood"
         }
+      ],
+      "items": [
+
       ]
     },
     {
@@ -50,6 +58,9 @@
           "directionName": "Northwest",
           "location": "Rorikstead"
         }
+      ],
+      "items": [
+
       ]
     },
     {
@@ -64,6 +75,9 @@
           "directionName": "West",
           "location": "Helgen"
         }
+      ],
+      "items": [
+
       ]
     },
     {
@@ -82,6 +96,9 @@
           "directionName": "West",
           "location": "Ivarstead"
         }
+      ],
+      "items": [
+
       ]
     },
     {
@@ -92,6 +109,9 @@
           "directionName": "Northwest",
           "location": "Lake Geir"
         }
+      ],
+      "items": [
+
       ]
     },
     {
@@ -120,6 +140,9 @@
           "directionName": "Northwest",
           "location": "Winterhold"
         }
+      ],
+      "items": [
+
       ]
     },
     {
@@ -138,6 +161,9 @@
           "directionName": "Southwest",
           "location": "Whiterun"
         }
+      ],
+      "items": [
+
       ]
     },
     {
@@ -152,6 +178,9 @@
           "directionName": "Southwest",
           "location": "Morthal"
         }
+      ],
+      "items": [
+
       ]
     },
     {
@@ -188,6 +217,9 @@
           "directionName": "Southeast",
           "location": "Morthal"
         }
+      ],
+      "items": [
+
       ]
     },
     {
@@ -206,6 +238,9 @@
           "directionName": "West",
           "location": "Markarth"
         }
+      ],
+      "items": [
+
       ]
     },
     {
@@ -220,6 +255,9 @@
           "directionName": "Northeast",
           "location": "Morthal"
         }
+      ],
+      "items": [
+
       ]
     },
     {
@@ -238,6 +276,9 @@
           "directionName": "South",
           "location": "Riverwood"
         }
+      ],
+      "items": [
+
       ]
     }
   ]
