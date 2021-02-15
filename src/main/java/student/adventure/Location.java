@@ -48,14 +48,15 @@ public class Location {
                 return location.getDirections().get(0).getDirectionName();
             case 2:
                 return location.getDirections().get(0).getDirectionName()
-                        + " and " + location.getDirections().get(1).getDirectionName();
+                        + " or " + location.getDirections().get(1).getDirectionName();
             default:
-                String availableDirections = "";
+                StringBuilder availableDirectionsBuilder = new StringBuilder();
                 for (int i = 0; i < NUMBER_OF_DIRECTIONS - 1; i++) {
-                    availableDirections = availableDirections
-                            + location.getDirections().get(i).getDirectionName() + ", ";
+                    availableDirectionsBuilder.append(location.getDirections().get(i).getDirectionName());
+                    availableDirectionsBuilder.append(", ");
                 }
-                availableDirections += "and " + location.getDirections()
+                String availableDirections = availableDirectionsBuilder.toString();
+                availableDirections += "or " + location.getDirections()
                         .get(NUMBER_OF_DIRECTIONS - 1).getDirectionName();
 
                 return availableDirections;
