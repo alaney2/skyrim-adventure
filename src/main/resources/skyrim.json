@@ -4,7 +4,7 @@
   "locations": [
     {
       "name": "Helgen",
-      "description": "An old city.",
+      "description": "You are at Helgen, a moderately-sized community near Skyrim's South border.",
       "directions": [
         {
           "directionName": "East",
@@ -27,7 +27,7 @@
     },
     {
       "name": "Falkreath",
-      "description": "",
+      "description": "You are at Falkreath, a major city famous for its large graveyard.",
       "directions": [
         {
           "directionName": "West",
@@ -44,7 +44,7 @@
     },
     {
       "name": "Riverwood",
-      "description": "",
+      "description": "You arrive at Riverwood. It is a small village in a valley, between a river and a steep mountainside.",
       "directions": [
         {
           "directionName": "North",
@@ -65,7 +65,7 @@
     },
     {
       "name": "Ivarstead",
-      "description": "",
+      "description": "You ar at Ivarstead. There is nothing here.",
       "directions": [
         {
           "directionName": "East",
@@ -82,7 +82,7 @@
     },
     {
       "name": "Lake Geir",
-      "description": "",
+      "description": "You are at the banks alongside Lake Geir. You see an island sitting in the center.",
       "directions": [
         {
           "directionName": "Northeast",
@@ -103,7 +103,7 @@
     },
     {
       "name": "Riften",
-      "description": "",
+      "description": "You are at Riften, a large city bisected by a large canal, with a good portion of the city spilling over the water atop large, wooden, piers.",
       "directions": [
         {
           "directionName": "Northwest",
@@ -116,7 +116,7 @@
     },
     {
       "name": "Eastmarch",
-      "description": "",
+      "description": "You are at Eastmarch, a volcanically active area with steaming gas leaking in between cracks in the ground.",
       "directions": [
         {
           "directionName": "Southwest",
@@ -130,7 +130,7 @@
     },
     {
       "name": "Windhelm",
-      "description": "",
+      "description": "You have arrived at Windhelm, the City of Kings.",
       "directions": [
         {
           "directionName": "Southeast",
@@ -147,7 +147,7 @@
     },
     {
       "name": "Winterhold",
-      "description": "",
+      "description": "You are at Winterhold. Once a great capital, it is now a shell of its former self due to the Great Collapse.",
       "directions": [
         {
           "directionName": "Southeast",
@@ -168,7 +168,7 @@
     },
     {
       "name": "Dawnstar",
-      "description": "",
+      "description": "You are at Dawnstar, a relatively small town. It resides in perpetual snow and ice.",
       "directions": [
         {
           "directionName": "Southeast",
@@ -185,7 +185,7 @@
     },
     {
       "name": "Morthal",
-      "description": "",
+      "description": "You are at Morthal, a city with a small population and relatively remote location.",
       "directions": [
         {
           "directionName": "Northeast",
@@ -211,7 +211,7 @@
     },
     {
       "name": "Solitude",
-      "description": "",
+      "description": "You have arrived at Solitude, the capital city of Skyrim and headquarters of the Imperial Legion.",
       "directions": [
         {
           "directionName": "Southeast",
@@ -224,7 +224,7 @@
     },
     {
       "name": "Rorikstead",
-      "description": "",
+      "description": "You are at Rorikstead, a settlement consisting of two cottages, an inn, and a manor.",
       "directions": [
         {
           "directionName": "North",
@@ -245,7 +245,7 @@
     },
     {
       "name": "Markarth",
-      "description": "",
+      "description": "You are at Markarth. There is a local saying, \"Blood and silver are what flows through Markarth...\"",
       "directions": [
         {
           "directionName": "East",
@@ -262,7 +262,7 @@
     },
     {
       "name": "Whiterun",
-      "description": "",
+      "description": "You are at Whiterun. Its central location makes it the commercial heart of Skyrim.",
       "directions": [
         {
           "directionName": "West",
