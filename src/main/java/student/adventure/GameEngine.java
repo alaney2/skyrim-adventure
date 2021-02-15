@@ -38,16 +38,16 @@ public class GameEngine {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         String[] arguments = tokenizeString(input);
-        while (arguments.length == 0) {
+        while (arguments[0].length() == 0) {
             input = scanner.nextLine();
             arguments = tokenizeString(input);
         }
         while (!userCommands.contains(arguments[0])) {
-            input = String.join(" ", arguments);
-            System.out.println("You don't understand " + input + "!");
-            arguments = getUserInput();
+            String joinedArguments = String.join(" ", arguments);
+            System.out.println("You don't understand " + joinedArguments + "!");
+            input = scanner.nextLine();
+            arguments = tokenizeString(input);
         }
-        scanner.close();
         return arguments;
     }
 
