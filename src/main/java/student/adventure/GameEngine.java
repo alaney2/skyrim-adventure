@@ -57,11 +57,15 @@ public class GameEngine {
             case "take":
                 if (arguments.length < 2) {
                     System.out.println("Enter an item to take");
+                } else {
+                    player.takeItem(arguments[1]);
                 }
                 break;
             case "drop":
                 if (arguments.length < 2) {
                     System.out.println("Enter an item to drop");
+                } else {
+                    player.dropItem(arguments[1]);
                 }
                 break;
             default:

@@ -49,6 +49,14 @@ public class Player {
         }
     }
 
+    public void takeItem(String itemName) {
+
+    }
+
+    public void dropItem(String itemName) {
+
+    }
+
     public static boolean playerHasReachedEndingLocation(Player player) {
         return player.getCurrentLocation().getName().equals("Windhelm");
     }
