@@ -21,7 +21,7 @@ public class GameEngine {
         player.setCurrentLocation(locationMap.get("Helgen"));
         String[] arguments = getUserInput();
         while (!arguments[0].equals("quit") && !arguments[0].equals("exit")) {
-            if (!player.getCurrentLocation().getName().equals("Windhelm")) {
+            if (player.getCurrentLocation().getName().equals("Windhelm")) {
                 break;
             }
             arguments = getUserInput();
