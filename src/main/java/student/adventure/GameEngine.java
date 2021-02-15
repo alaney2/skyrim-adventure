@@ -25,16 +25,14 @@ public class GameEngine {
 
         String command;
         do {
-            System.out.println(player.getCurrentLocation().getDescription());
-            System.out.println("From here, you can go: "
-                    + Location.getFormattedStringOfAvailableDirections(player.getCurrentLocation()));
-            System.out.println("Items visible: " + Location.getStringOfAvailableItems(player.getCurrentLocation()));
+            printDefaultInfo();
 
             String[] arguments = UserInput.handleUserInput();
             command = arguments[0];
             executeCommand(command, arguments);
-            if (player.getCurrentLocation().getName().equals("Windhelm")) {
-                // Ending location reached.
+
+            if (Player.playerHasReachedEndingLocation(player)) {
+                printGameEnding();
                 break;
             }
         }
@@ -81,5 +79,16 @@ public class GameEngine {
                 "If they hadn't been looking for you, I could’ve stolen that horse and been half way to Hammerfell.\n" +
                 "You there. You and me — we should be here. It’s these Stormcloaks the Empire wants.");
         System.out.println();
+    }
+
+    public static void printDefaultInfo() {
+        System.out.println(player.getCurrentLocation().getDescription());
+        System.out.println("From here, you can go: "
+                + Location.getFormattedStringOfAvailableDirections(player.getCurrentLocation()));
+        System.out.println("Items visible: " + Location.getStringOfAvailableItems(player.getCurrentLocation()));
+    }
+
+    public static void printGameEnding() {
+        System.out.println("You've made it to Windhelm!");
     }
 }

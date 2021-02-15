@@ -5,11 +5,20 @@ import java.util.Map;
 
 public class Player {
     private Location currentLocation;
+    private Location endingLocation;
     private List<Item> inventory;
 
     public Player(Location currentLocation, List<Item> inventory) {
         this.currentLocation = currentLocation;
         this.inventory = inventory;
+    }
+
+    public Location getEndingLocation() {
+        return endingLocation;
+    }
+
+    public void setEndingLocation(Location endingLocation) {
+        this.endingLocation = endingLocation;
     }
 
     public Location getCurrentLocation() {
@@ -38,5 +47,9 @@ public class Player {
             String locationName = directionDictionary.get(directionName).getLocation();
             this.setCurrentLocation(GameEngine.locationDictionary.get(locationName));
         }
+    }
+
+    public static boolean playerHasReachedEndingLocation(Player player) {
+        return player.getCurrentLocation().getName().equals("Windhelm");
     }
 }
