@@ -76,8 +76,14 @@ public class GameEngine {
                 System.out.println(player.getCurrentLocation().getDescription());
                 break;
             case "take":
+                if (arguments.length < 2) {
+                    System.out.println("Enter an item to take");
+                }
                 break;
             case "drop":
+                if (arguments.length < 2) {
+                    System.out.println("Enter an item to drop");
+                }
                 break;
             default:
                 System.out.println("Invalid command.");
