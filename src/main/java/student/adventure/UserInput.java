@@ -1,8 +1,14 @@
 package student.adventure;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class UserInput {
+    public static final Set<String> userCommands = new HashSet<>(
+            Arrays.asList("quit", "exit", "go", "examine", "take", "drop"));
+
     public static String[] handleUserInput() {
         String[] arguments = getArguments();
 
@@ -10,7 +16,7 @@ public class UserInput {
             arguments = getArguments();
         }
 
-        while (!GameEngine.userCommands.contains(arguments[0])) {
+        while (!userCommands.contains(arguments[0])) {
             String joinedArguments = String.join(" ", arguments);
             System.out.println("You don't understand \"" + joinedArguments + "\"!");
             arguments = getArguments();

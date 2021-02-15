@@ -10,9 +10,7 @@ import java.util.*;
 
 
 public class GameEngine {
-    private static Layout layout;
-    public static final Set<String> userCommands = new HashSet<>(
-            Arrays.asList("quit", "exit", "go", "examine", "take", "drop"));
+    public static Layout layout;
     public static Map<String, Location> locationDictionary;
     public static Player player;
 
@@ -21,7 +19,7 @@ public class GameEngine {
         printGameIntro();
 
         locationDictionary = Layout.generateLocationDictionary(layout);
-        player = new Player(locationDictionary.get("Helgen"), new ArrayList<>());
+        player = new Player(locationDictionary.get(layout.getStartingLocation()), new ArrayList<>());
 
         String command;
         do {

@@ -50,7 +50,7 @@ public class Player {
     }
 
     public void takeItem(String itemName) {
-
+        GameEngine.layout.getLocations();
     }
 
     public void dropItem(String itemName) {
