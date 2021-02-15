@@ -26,6 +26,7 @@ public class Layout {
         for (Location location: layout.getLocations()) {
             locationMap.put(location.getName(), location);
         }
+
         return locationMap;
     }
 }

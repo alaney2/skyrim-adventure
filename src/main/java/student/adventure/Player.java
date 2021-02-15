@@ -26,4 +26,8 @@ public class Player {
     public void addItem(Item item) {
         this.inventory.add(item);
     }
+
+    public void goDirection(Direction direction) {
+
+    }
 }

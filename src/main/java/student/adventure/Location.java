@@ -1,6 +1,8 @@
 package student.adventure;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Location {
     private String name;
@@ -22,5 +24,14 @@ public class Location {
 
     public List<Item> getItems() {
         return items;
+    }
+
+    public static Map<String, Direction> generateDirectionMap(Location location) {
+        Map<String, Direction> directionMap = new HashMap<>();
+        for (Direction direction: location.getDirections()) {
+            directionMap.put(direction.getDirectionName(), direction);
+        }
+
+        return directionMap;
     }
 }
