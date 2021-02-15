@@ -43,7 +43,7 @@ public class Location {
     public static Map<String, Item> generateItemDictionary(Location location) {
         Map<String, Item> itemDictionary = new HashMap<>();
         for (Item item: location.getItems()) {
-            itemDictionary.put(item.getItemName(), item);
+            itemDictionary.put(item.getItemName().toLowerCase(), item);
         }
 
         return itemDictionary;
