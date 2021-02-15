@@ -50,7 +50,14 @@ public class Player {
     }
 
     public void takeItem(String itemName) {
-        GameEngine.layout.getLocations();
+        Location currentLocation = GameEngine.player.getCurrentLocation();
+        Map<String, Item> itemDictionary = Location.generateItemDictionary(currentLocation);
+        if (!itemDictionary.containsKey(itemName)) {
+            System.out.println("There is no item " + "\"" + itemName + "\" in the room.");
+        } else {
+            this.inventory.add(itemDictionary.get(itemName));
+            currentLocation.removeItem(itemDictionary.get(itemName));
+        }
     }
 
     public void dropItem(String itemName) {

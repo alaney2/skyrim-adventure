@@ -21,7 +21,13 @@
       ],
       "items": [
         {
-          "itemName": "Sword"
+          "itemName": "sword"
+        },
+        {
+          "itemName" : "shield"
+        },
+        {
+          "itemName" : "coin"
         }
       ]
     },

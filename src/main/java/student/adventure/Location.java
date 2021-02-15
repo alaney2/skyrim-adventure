@@ -32,12 +32,21 @@ public class Location {
     }
 
     public static Map<String, Direction> generateDirectionDictionary(Location location) {
-        Map<String, Direction> directionMap = new HashMap<>();
+        Map<String, Direction> directionDictionary = new HashMap<>();
         for (Direction direction: location.getDirections()) {
-            directionMap.put(direction.getDirectionName(), direction);
+            directionDictionary.put(direction.getDirectionName(), direction);
         }
 
-        return directionMap;
+        return directionDictionary;
+    }
+
+    public static Map<String, Item> generateItemDictionary(Location location) {
+        Map<String, Item> itemDictionary = new HashMap<>();
+        for (Item item: location.getItems()) {
+            itemDictionary.put(item.getItemName(), item);
+        }
+
+        return itemDictionary;
     }
 
     public static String getFormattedStringOfAvailableDirections(Location location) {
