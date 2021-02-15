@@ -17,7 +17,7 @@ public class GameEngine {
 
     public static void runGame() throws FileNotFoundException {
         loadJson();
-        locationMap = Layout.generateLocationMap(layout);
+        locationMap = Layout.generateLocationHashMap(layout);
         player = new Player(locationMap.get("Helgen"), new ArrayList<>());
         String command;
         do {

@@ -21,7 +21,7 @@ public class Layout {
         return locations;
     }
 
-    public static Map<String, Location> generateLocationMap(Layout layout) {
+    public static Map<String, Location> generateLocationHashMap(Layout layout) {
         Map<String, Location> locationMap = new HashMap<>();
         for (Location location: layout.getLocations()) {
             locationMap.put(location.getName(), location);
