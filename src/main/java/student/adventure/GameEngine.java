@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.Reader;
+import java.sql.SQLOutput;
 import java.util.*;
 
 
@@ -23,13 +24,17 @@ public class GameEngine {
 
         String command;
         do {
+            System.out.println(player.getCurrentLocation().getDescription());
+            System.out.println("From here, you can go: "
+                    + Location.getFormattedStringOfAvailableDirections(player.getCurrentLocation()));
+
             String[] arguments = UserInput.handleUserInput();
             command = arguments[0];
+            executeCommand(command, arguments);
             if (player.getCurrentLocation().getName().equals("Windhelm")) {
                 // Ending location reached.
                 break;
             }
-            executeCommand(command, arguments);
         }
         while (!command.equals("quit") && !command.equals("exit"));
     }
@@ -45,8 +50,9 @@ public class GameEngine {
             case "go":
                 if (arguments.length < 2) {
                     System.out.println("Enter a direction");
+                } else {
+                    player.goDirection(arguments[1]);
                 }
-                player.goDirection(arguments[1]);
                 break;
             case "examine":
                 System.out.println(player.getCurrentLocation().getDescription());
