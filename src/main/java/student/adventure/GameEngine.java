@@ -12,13 +12,15 @@ public class GameEngine {
     private static Layout layout;
     public static final Set<String> userCommands = new HashSet<>(
             Arrays.asList("quit", "exit", "go", "examine", "take", "drop"));
-    public static Map<String, Location> locationMap;
+    public static Map<String, Location> locationDictionary;
     public static Player player;
 
     public static void runGame() throws FileNotFoundException {
         loadJson();
-        locationMap = Layout.generateLocationHashMap(layout);
-        player = new Player(locationMap.get("Helgen"), new ArrayList<>());
+
+        locationDictionary = Layout.generateLocationDictionary(layout);
+        player = new Player(locationDictionary.get("Helgen"), new ArrayList<>());
+
         String command;
         do {
             String[] arguments = UserInput.handleUserInput();

@@ -26,7 +26,7 @@ public class Location {
         return items;
     }
 
-    public static Map<String, Direction> generateDirectionHashMap(Location location) {
+    public static Map<String, Direction> generateDirectionDictionary(Location location) {
         Map<String, Direction> directionMap = new HashMap<>();
         for (Direction direction: location.getDirections()) {
             directionMap.put(direction.getDirectionName(), direction);

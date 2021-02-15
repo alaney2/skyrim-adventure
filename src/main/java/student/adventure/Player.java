@@ -1,6 +1,7 @@
 package student.adventure;
 
 import java.util.List;
+import java.util.Map;
 
 public class Player {
     private Location currentLocation;
@@ -28,6 +29,6 @@ public class Player {
     }
 
     public void goDirection(Direction direction) {
-
+        Map<String, Direction> directionDictionary = Location.generateDirectionDictionary(currentLocation);
     }
 }
