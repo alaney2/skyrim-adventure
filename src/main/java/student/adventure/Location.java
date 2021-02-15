@@ -57,8 +57,19 @@ public class Location {
                 }
                 availableDirectionsBuilder.append("or ");
                 availableDirectionsBuilder.append(location.getDirections().get(NUMBER_OF_DIRECTIONS - 1).getDirectionName());
-                
+
                 return availableDirectionsBuilder.toString();
         }
+    }
+
+    public static String getStringOfAvailableItems(Location location) {
+        StringBuilder availableItemsBuilder = new StringBuilder();
+        for (int i = 0; i < location.getItems().size(); i++) {
+            availableItemsBuilder.append(location.getItems().get(i).getItemName());
+            availableItemsBuilder.append(", ");
+        }
+        availableItemsBuilder.append(location.getItems().get(location.getItems().size() - 1).getItemName());
+
+        return availableItemsBuilder.toString();
     }
 }

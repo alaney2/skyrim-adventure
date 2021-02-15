@@ -28,7 +28,7 @@ public class GameEngine {
             System.out.println(player.getCurrentLocation().getDescription());
             System.out.println("From here, you can go: "
                     + Location.getFormattedStringOfAvailableDirections(player.getCurrentLocation()));
-            System.out.println("Items visible: ");
+            System.out.println("Items visible: " + Location.getStringOfAvailableItems(player.getCurrentLocation()));
 
             String[] arguments = UserInput.handleUserInput();
             command = arguments[0];
