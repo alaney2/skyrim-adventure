@@ -33,7 +33,7 @@ public class Player {
         directionName = UserInput.capitalizeFirstLetter(directionName);
 
         if (!directionDictionary.containsKey(directionName)) {
-            System.out.println("That is an invalid direction!");
+            System.out.println("You can't go " + "\"" + directionName + "\"!");
         } else {
             String locationName = directionDictionary.get(directionName).getLocation();
             this.setCurrentLocation(GameEngine.locationDictionary.get(locationName));
