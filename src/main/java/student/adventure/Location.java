@@ -56,8 +56,8 @@ public class Location {
                     availableDirectionsBuilder.append(", ");
                 }
 
-                availableDirectionsBuilder.append("or " + location.getDirections()
-                        .get(NUMBER_OF_DIRECTIONS - 1).getDirectionName());
+                availableDirectionsBuilder.append("or ");
+                availableDirectionsBuilder.append(location.getDirections().get(NUMBER_OF_DIRECTIONS - 1).getDirectionName());
                 String availableDirections = availableDirectionsBuilder.toString();
                 return availableDirections;
         }
