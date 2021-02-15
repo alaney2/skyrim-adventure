@@ -30,4 +30,59 @@ public class AdventureTest {
         layout = gson.fromJson(reader, Layout.class);
     }
 
+    @Test
+    public void invalidCommand() {
+
+    }
+
+    @Test
+    public void examineCurrentLocation() {
+
+    }
+
+    @Test
+    public void goWithoutArgument() {
+        
+    }
+
+    @Test
+    public void goNorth() {
+
+    }
+
+    @Test
+    public void goInvalidDirection() {
+
+    }
+
+    @Test
+    public void dropItem() {
+
+    }
+
+    @Test
+    public void takeItem() {
+
+    }
+
+    @Test
+    public void takeNonexistentItem() {
+
+    }
+
+    @Test
+    public void dropNonexistentItem() {
+
+    }
+
+    @Test
+    public void dropItemWithoutArgument() {
+
+    }
+
+    @Test
+    public void takeItemWithoutArgument() {
+
+    }
+
 }
