@@ -85,7 +85,7 @@ public class Location {
                 return location.getItems().get(0).getItemName();
             default:
                 StringBuilder availableItemsBuilder = new StringBuilder();
-                for (int i = 0; i < NUMBER_OF_ITEMS; i++) {
+                for (int i = 0; i < NUMBER_OF_ITEMS - 1; i++) {
                     availableItemsBuilder.append(location.getItems().get(i).getItemName());
                     availableItemsBuilder.append(", ");
                 }
