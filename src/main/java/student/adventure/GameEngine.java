@@ -19,11 +19,12 @@ public class GameEngine {
         Map<String, Location> locationMap = Layout.generateLocationMap(layout);
         Player player = new Player();
         player.setCurrentLocation(locationMap.get("Helgen"));
-        while (!player.getCurrentLocation().getName().equals("Windhelm")) {
-            String[] arguments = getUserInput();
-            if (arguments[0].equals("quit") || arguments[0].equals("exit")) {
+        String[] arguments = getUserInput();
+        while (!arguments[0].equals("quit") && !arguments[0].equals("exit")) {
+            if (!player.getCurrentLocation().getName().equals("Windhelm")) {
                 break;
             }
+            arguments = getUserInput();
         }
     }
 
@@ -44,14 +45,14 @@ public class GameEngine {
         while (!userCommands.contains(arguments[0])) {
             input = String.join(" ", arguments);
             System.out.println("You don't understand " + input + "!");
-            getUserInput();
+            arguments = getUserInput();
         }
+        scanner.close();
         return arguments;
     }
 
     public static String[] tokenizeString(String input) {
         input = input.toLowerCase();
-        String[] arguments = input.split("\\s+");
-        return arguments;
+        return input.split("\\s+");
     }
 }
