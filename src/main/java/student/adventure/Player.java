@@ -28,7 +28,14 @@ public class Player {
         this.inventory.add(item);
     }
 
-    public void goDirection(Direction direction) {
+    public void goDirection(String directionName) {
         Map<String, Direction> directionDictionary = Location.generateDirectionDictionary(currentLocation);
+
+        if (!directionDictionary.containsKey(directionName)) {
+            System.out.println("That is an invalid direction!");
+        } else {
+            String locationName = directionDictionary.get(directionName).getLocation();
+            this.setCurrentLocation(GameEngine.locationDictionary.get(locationName));
+        }
     }
 }

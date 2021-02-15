@@ -46,6 +46,7 @@ public class GameEngine {
                 if (arguments.length < 2) {
                     System.out.println("Enter a direction");
                 }
+                player.goDirection(arguments[1]);
                 break;
             case "examine":
                 System.out.println(player.getCurrentLocation().getDescription());
