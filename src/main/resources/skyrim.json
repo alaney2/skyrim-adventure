@@ -4,7 +4,7 @@
   "locations": [
     {
       "name": "Helgen",
-      "description": "",
+      "description": "An old city.",
       "directions": [
         {
           "directionName": "East",

@@ -12,12 +12,13 @@ public class GameEngine {
     private static Layout layout;
     public static final Set<String> userCommands = new HashSet<>(
             Arrays.asList("quit", "exit", "go", "examine", "take", "drop"));
+    public static Map<String, Location> locationMap;
+    public static Player player;
 
     public static void runGame() throws FileNotFoundException {
         loadJson();
-        Map<String, Location> locationMap = Layout.generateLocationMap(layout);
-        Player player = new Player();
-        player.setCurrentLocation(locationMap.get("Helgen"));
+        locationMap = Layout.generateLocationMap(layout);
+        player = new Player(locationMap.get("Helgen"), new ArrayList<>());
         String command;
         do {
             String[] arguments = getUserInput();
@@ -26,7 +27,7 @@ public class GameEngine {
                 // Ending location reached.
                 break;
             }
-
+            executeCommand(command, arguments);
         }
         while (!command.equals("quit") && !command.equals("exit"));
     }
@@ -62,5 +63,24 @@ public class GameEngine {
         input = input.toLowerCase();
 
         return input.split("\\s+");
+    }
+
+    public static void executeCommand(String command, String[] arguments) {
+        switch(command) {
+            case "go":
+                if (arguments.length < 2) {
+                    System.out.println("Enter a direction");
+                }
+                break;
+            case "examine":
+                System.out.println(player.getCurrentLocation().getDescription());
+                break;
+            case "take":
+                break;
+            case "drop":
+                break;
+            default:
+                System.out.println("Invalid command.");
+        }
     }
 }
