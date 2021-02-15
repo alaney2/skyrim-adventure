@@ -55,10 +55,10 @@ public class Location {
                     availableDirectionsBuilder.append(location.getDirections().get(i).getDirectionName());
                     availableDirectionsBuilder.append(", ");
                 }
-                String availableDirections = availableDirectionsBuilder.toString();
-                availableDirections += "or " + location.getDirections()
-                        .get(NUMBER_OF_DIRECTIONS - 1).getDirectionName();
 
+                availableDirectionsBuilder.append("or " + location.getDirections()
+                        .get(NUMBER_OF_DIRECTIONS - 1).getDirectionName());
+                String availableDirections = availableDirectionsBuilder.toString();
                 return availableDirections;
         }
     }
