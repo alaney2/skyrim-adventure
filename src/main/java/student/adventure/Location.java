@@ -2,6 +2,7 @@ package student.adventure;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 public class Location {
@@ -37,6 +38,9 @@ public class Location {
 
     public static String getFormattedStringOfAvailableDirections(Location location) {
         final int NUMBER_OF_DIRECTIONS = location.getDirections().size();
+
+        // Two directions: North and West
+        // Three directions: North, South, and West
         switch (NUMBER_OF_DIRECTIONS) {
             case 0:
                 return "";

@@ -30,6 +30,7 @@ public class Player {
 
     public void goDirection(String directionName) {
         Map<String, Direction> directionDictionary = Location.generateDirectionDictionary(currentLocation);
+        directionName = UserInput.capitalizeFirstLetter(directionName);
 
         if (!directionDictionary.containsKey(directionName)) {
             System.out.println("That is an invalid direction!");
