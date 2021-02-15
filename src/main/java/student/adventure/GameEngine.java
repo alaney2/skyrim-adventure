@@ -21,7 +21,7 @@ public class GameEngine {
         player = new Player(locationMap.get("Helgen"), new ArrayList<>());
         String command;
         do {
-            String[] arguments = UserInput.getUserInput();
+            String[] arguments = UserInput.handleUserInput();
             command = arguments[0];
             if (player.getCurrentLocation().getName().equals("Windhelm")) {
                 // Ending location reached.
@@ -59,7 +59,6 @@ public class GameEngine {
                 }
                 break;
             default:
-                System.out.println("Invalid command.");
         }
     }
 }
