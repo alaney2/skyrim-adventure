@@ -42,7 +42,7 @@ public class AdventureTest {
 
     @Test
     public void goWithoutArgument() {
-        
+
     }
 
     @Test
