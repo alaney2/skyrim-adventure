@@ -46,21 +46,21 @@ public class GameEngine {
     public static void executeCommand(String command, String[] arguments) {
         switch(command) {
             case "go":
-                if (arguments.length < 2) {
-                    System.out.println("Enter a direction");
+                if (arguments.length < 2 || arguments[1] == null) {
+                    System.out.println("Enter a direction to go");
                 } else {
                     player.goDirection(arguments[1]);
                 }
                 break;
             case "take":
-                if (arguments.length < 2) {
+                if (arguments.length < 2 || arguments[1] == null) {
                     System.out.println("Enter an item to take");
                 } else {
                     player.takeItem(arguments[1]);
                 }
                 break;
             case "drop":
-                if (arguments.length < 2) {
+                if (arguments.length < 2 || arguments[1] == null) {
                     System.out.println("Enter an item to drop");
                 } else {
                     player.dropItem(arguments[1]);

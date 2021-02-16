@@ -62,17 +62,16 @@ public class Player {
         boolean isItemInInventory = false;
         String unformattedItemName = itemName;
         itemName = itemName.toLowerCase();
-
         int inventoryIndex = 0;
-        while (inventoryIndex < this.inventory.size() && !isItemInInventory) {
-            if (inventory.get(inventoryIndex).getItemName().equals(itemName)) {
+        while (inventoryIndex < inventory.size() && !isItemInInventory) {
+            if (inventory.get(inventoryIndex).getItemName().equalsIgnoreCase(itemName)) {
                 Item validItem = inventory.get(inventoryIndex);
                 inventory.remove(validItem);
                 currentLocation.addItem(validItem);
 
                 isItemInInventory = true;
-                inventoryIndex += 1;
             }
+            inventoryIndex += 1;
         }
         if (!isItemInInventory) {
             System.out.println("You don't have " + "\"" + unformattedItemName + "\"!");
