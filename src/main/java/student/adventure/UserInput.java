@@ -25,12 +25,6 @@ public class UserInput {
         return arguments;
     }
 
-//    public static String[] formatAndTokenizeString(String input) {
-//        input = input.toLowerCase();
-//
-//        return input.split("\\s+");
-//    }
-
     public static String[] getTokenizedArguments() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("> ");

@@ -27,7 +27,7 @@ public class GameEngine {
 
             String[] arguments = UserInput.handleUserInput();
             command = arguments[0].toLowerCase();
-            executeCommand(command, arguments);
+            player.executeCommand(command, arguments);
 
             if (Player.playerHasReachedEndingLocation(player)) {
                 printGameEnding();
@@ -41,33 +41,6 @@ public class GameEngine {
         Gson gson = new Gson();
         Reader reader = new FileReader("src/main/resources/skyrim.json");
         layout = gson.fromJson(reader, Layout.class);
-    }
-
-    public static void executeCommand(String command, String[] arguments) {
-        switch(command) {
-            case "go":
-                if (arguments.length < 2 || arguments[1] == null) {
-                    System.out.println("Enter a direction to go");
-                } else {
-                    player.goDirection(arguments[1]);
-                }
-                break;
-            case "take":
-                if (arguments.length < 2 || arguments[1] == null) {
-                    System.out.println("Enter an item to take");
-                } else {
-                    player.takeItem(arguments[1]);
-                }
-                break;
-            case "drop":
-                if (arguments.length < 2 || arguments[1] == null) {
-                    System.out.println("Enter an item to drop");
-                } else {
-                    player.dropItem(arguments[1]);
-                }
-                break;
-            default:
-        }
     }
 
     public static void printGameIntro() {
@@ -88,6 +61,6 @@ public class GameEngine {
     }
 
     public static void printGameEnding() {
-        System.out.println("You've made it to Windhelm!");
+        System.out.println("You've made it to Windhelm; you win");
     }
 }

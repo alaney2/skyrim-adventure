@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.*;
+import java.util.ArrayList;
 
 
 public class AdventureTest {
@@ -22,12 +23,14 @@ public class AdventureTest {
     private static Gson gson;
     private static Reader reader;
     private static Layout layout;
+    private static Player player;
 
     @Before
     public void setUp() throws FileNotFoundException {
         gson = new Gson();
         reader = new FileReader("src/main/resources/skyrim.json");
         layout = gson.fromJson(reader, Layout.class);
+        player = new Player(Layout.generateLocationDictionary(layout).get(layout.getEndingLocation()), new ArrayList<>());
     }
 
     @Before
@@ -50,13 +53,10 @@ public class AdventureTest {
     }
 
     @Test
-    public void invalidCommand() {
-
-    }
-
-    @Test
     public void examineCurrentLocation() {
-
+        player.executeCommand("examine", new String[] {"examine"});
+        String description = "You have arrived at Windhelm, the City of Kings.";
+        assertEquals(description, outContent.toString());
     }
 
     @Test

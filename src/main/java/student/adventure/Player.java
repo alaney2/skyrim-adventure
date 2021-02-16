@@ -33,6 +33,32 @@ public class Player {
     public List<Item> getInventory() {
         return inventory;
     }
+    public void executeCommand(String command, String[] arguments) {
+        switch(command) {
+            case "go":
+                if (arguments.length < 2 || arguments[1] == null) {
+                    System.out.println("Enter a direction to go");
+                } else {
+                    goDirection(arguments[1]);
+                }
+                break;
+            case "take":
+                if (arguments.length < 2 || arguments[1] == null) {
+                    System.out.println("Enter an item to take");
+                } else {
+                    takeItem(arguments[1]);
+                }
+                break;
+            case "drop":
+                if (arguments.length < 2 || arguments[1] == null) {
+                    System.out.println("Enter an item to drop");
+                } else {
+                    dropItem(arguments[1]);
+                }
+                break;
+            default:
+        }
+    }
 
     public void goDirection(String directionName) {
         Map<String, Direction> directionDictionary = Location.generateDirectionDictionary(currentLocation);
