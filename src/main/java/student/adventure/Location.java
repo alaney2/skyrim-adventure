@@ -31,6 +31,10 @@ public class Location {
         items.remove(item);
     }
 
+    public void addItem(Item item) {
+        items.add(item);
+    }
+
     public static Map<String, Direction> generateDirectionDictionary(Location location) {
         Map<String, Direction> directionDictionary = new HashMap<>();
         for (Direction direction: location.getDirections()) {

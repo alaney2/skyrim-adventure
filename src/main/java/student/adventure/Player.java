@@ -1,6 +1,7 @@
 package student.adventure;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 public class Player {
@@ -33,10 +34,6 @@ public class Player {
         return inventory;
     }
 
-    public void addItem(Item item) {
-        this.inventory.add(item);
-    }
-
     public void goDirection(String directionName) {
         Map<String, Direction> directionDictionary = Location.generateDirectionDictionary(currentLocation);
         directionName = UserInput.capitalizeFirstLetter(directionName);
@@ -50,18 +47,30 @@ public class Player {
     }
 
     public void takeItem(String itemName) {
-        Location currentLocation = GameEngine.player.getCurrentLocation();
         Map<String, Item> itemDictionary = Location.generateItemDictionary(currentLocation);
         if (!itemDictionary.containsKey(itemName)) {
             System.out.println("There is no item " + "\"" + itemName + "\" in the room.");
         } else {
-            this.inventory.add(itemDictionary.get(itemName));
+            inventory.add(itemDictionary.get(itemName));
             currentLocation.removeItem(itemDictionary.get(itemName));
         }
     }
 
     public void dropItem(String itemName) {
+        boolean isItemInInventory = false;
 
+        int inventoryIndex = 0;
+        while (inventoryIndex < this.inventory.size() && !isItemInInventory) {
+            if (inventory.get(inventoryIndex).getItemName().equalsIgnoreCase(itemName)) {
+                Item validItem = inventory.get(inventoryIndex);
+                inventory.remove(validItem);
+                currentLocation.addItem(validItem);
+                isItemInInventory = true;
+            }
+        }
+        if (!isItemInInventory) {
+            System.out.println("You don't have " + "\"" + itemName + "\"!");
+        }
     }
 
     public static boolean playerHasReachedEndingLocation(Player player) {
