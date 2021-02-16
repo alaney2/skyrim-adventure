@@ -48,7 +48,7 @@ public class Player {
 
     public void takeItem(String itemName) {
         Map<String, Item> itemDictionary = Location.generateItemDictionary(currentLocation);
-        if (!itemDictionary.containsKey(itemName)) {
+        if (!itemDictionary.containsKey(itemName.toLowerCase())) {
             System.out.println("There is no item " + "\"" + itemName + "\" in the room.");
         } else {
             inventory.add(itemDictionary.get(itemName));

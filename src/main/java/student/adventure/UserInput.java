@@ -10,33 +10,35 @@ public class UserInput {
             Arrays.asList("quit", "exit", "go", "examine", "take", "drop"));
 
     public static String[] handleUserInput() {
-        String[] arguments = getArguments();
+        String[] arguments = getTokenizedArguments();
 
         while (arguments[0].length() == 0) {
-            arguments = getArguments();
+            arguments = getTokenizedArguments();
         }
 
         while (!userCommands.contains(arguments[0])) {
             String joinedArguments = String.join(" ", arguments);
             System.out.println("You don't understand \"" + joinedArguments + "\"!");
-            arguments = getArguments();
+            arguments = getTokenizedArguments();
         }
 
         return arguments;
     }
 
-    public static String[] formatAndTokenizeString(String input) {
-        input = input.toLowerCase();
+//    public static String[] formatAndTokenizeString(String input) {
+//        input = input.toLowerCase();
+//
+//        return input.split("\\s+");
+//    }
 
-        return input.split("\\s+");
-    }
-
-    public static String[] getArguments() {
+    public static String[] getTokenizedArguments() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("> ");
         String input = scanner.nextLine();
 
-        return formatAndTokenizeString(input);
+        // return formatAndTokenizeString(input);
+
+        return input.split("\\s+");
     }
 
     public static String capitalizeFirstLetter(String input) {

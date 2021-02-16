@@ -26,7 +26,7 @@ public class GameEngine {
             printDefaultInfo();
 
             String[] arguments = UserInput.handleUserInput();
-            command = arguments[0];
+            command = arguments[0].toLowerCase();
             executeCommand(command, arguments);
 
             if (Player.playerHasReachedEndingLocation(player)) {
