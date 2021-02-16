@@ -47,9 +47,11 @@ public class Player {
     }
 
     public void takeItem(String itemName) {
+        String unformattedItemName = itemName;
+        itemName = itemName.toLowerCase();
         Map<String, Item> itemDictionary = Location.generateItemDictionary(currentLocation);
-        if (!itemDictionary.containsKey(itemName.toLowerCase())) {
-            System.out.println("There is no item " + "\"" + itemName + "\" in the room.");
+        if (!itemDictionary.containsKey(itemName)) {
+            System.out.println("There is no item " + "\"" + unformattedItemName + "\" in the room.");
         } else {
             inventory.add(itemDictionary.get(itemName));
             currentLocation.removeItem(itemDictionary.get(itemName));
@@ -58,18 +60,22 @@ public class Player {
 
     public void dropItem(String itemName) {
         boolean isItemInInventory = false;
+        String unformattedItemName = itemName;
+        itemName = itemName.toLowerCase();
 
         int inventoryIndex = 0;
         while (inventoryIndex < this.inventory.size() && !isItemInInventory) {
-            if (inventory.get(inventoryIndex).getItemName().equalsIgnoreCase(itemName)) {
+            if (inventory.get(inventoryIndex).getItemName().equals(itemName)) {
                 Item validItem = inventory.get(inventoryIndex);
                 inventory.remove(validItem);
                 currentLocation.addItem(validItem);
+
                 isItemInInventory = true;
+                inventoryIndex += 1;
             }
         }
         if (!isItemInInventory) {
-            System.out.println("You don't have " + "\"" + itemName + "\"!");
+            System.out.println("You don't have " + "\"" + unformattedItemName + "\"!");
         }
     }
 
