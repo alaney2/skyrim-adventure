@@ -16,7 +16,7 @@ public class UserInput {
             arguments = getTokenizedArguments();
         }
 
-        while (!userCommands.contains(arguments[0])) {
+        while (!userCommands.contains(arguments[0].toLowerCase())) {
             String joinedArguments = String.join(" ", arguments);
             System.out.println("You don't understand \"" + joinedArguments + "\"!");
             arguments = getTokenizedArguments();
