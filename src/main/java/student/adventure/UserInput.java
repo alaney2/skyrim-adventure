@@ -9,6 +9,10 @@ public class UserInput {
     public static final Set<String> userCommands = new HashSet<>(
             Arrays.asList("quit", "exit", "go", "examine", "take", "drop"));
 
+    /**
+     *
+     * @return
+     */
     public static String[] handleUserInput() {
         String[] arguments = getTokenizedArguments();
 
@@ -25,6 +29,10 @@ public class UserInput {
         return arguments;
     }
 
+    /**
+     *
+     * @return
+     */
     public static String[] getTokenizedArguments() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("> ");
@@ -35,6 +43,11 @@ public class UserInput {
         return input.split("\\s+");
     }
 
+    /**
+     *
+     * @param input
+     * @return
+     */
     public static String capitalizeFirstLetter(String input) {
         input = input.toLowerCase();
 

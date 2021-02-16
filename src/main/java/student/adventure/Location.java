@@ -35,6 +35,11 @@ public class Location {
         items.add(item);
     }
 
+    /**
+     *
+     * @param location
+     * @return
+     */
     public static Map<String, Direction> generateDirectionDictionary(Location location) {
         Map<String, Direction> directionDictionary = new HashMap<>();
         for (Direction direction: location.getDirections()) {
@@ -44,6 +49,11 @@ public class Location {
         return directionDictionary;
     }
 
+    /**
+     *
+     * @param location
+     * @return
+     */
     public static Map<String, Item> generateItemDictionary(Location location) {
         Map<String, Item> itemDictionary = new HashMap<>();
         for (Item item: location.getItems()) {
@@ -53,6 +63,11 @@ public class Location {
         return itemDictionary;
     }
 
+    /**
+     *
+     * @param location
+     * @return
+     */
     public static String getFormattedStringOfAvailableDirections(Location location) {
         final int NUMBER_OF_DIRECTIONS = location.getDirections().size();
 
@@ -79,6 +94,11 @@ public class Location {
         }
     }
 
+    /**
+     *
+     * @param location
+     * @return
+     */
     public static String getStringOfAvailableItems(Location location) {
         final int NUMBER_OF_ITEMS = location.getItems().size();
 

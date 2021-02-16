@@ -21,6 +21,11 @@ public class Layout {
         return locations;
     }
 
+    /**
+     *
+     * @param layout
+     * @return
+     */
     public static Map<String, Location> generateLocationDictionary(Layout layout) {
         Map<String, Location> locationMap = new HashMap<>();
         for (Location location: layout.getLocations()) {

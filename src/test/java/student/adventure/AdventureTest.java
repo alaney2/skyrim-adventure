@@ -30,7 +30,7 @@ public class AdventureTest {
         gson = new Gson();
         reader = new FileReader("src/main/resources/skyrim.json");
         layout = gson.fromJson(reader, Layout.class);
-        player = new Player(Layout.generateLocationDictionary(layout).get(layout.getEndingLocation()), new ArrayList<>());
+        player = new Player(Layout.generateLocationDictionary(layout).get(layout.getStartingLocation()), new ArrayList<>());
     }
 
     @Before
@@ -55,7 +55,8 @@ public class AdventureTest {
     @Test
     public void examineCurrentLocation() {
         player.executeCommand("examine", new String[] {"examine"});
-        String description = "You have arrived at Windhelm, the City of Kings.";
+        //System.out.print("You have arrived at Windhelm, the City of Kings.");
+        String description = "You have arrived at Windhelm, the City of Kings.\n";
         assertEquals(description, outContent.toString());
     }
 

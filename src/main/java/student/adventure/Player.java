@@ -33,6 +33,12 @@ public class Player {
     public List<Item> getInventory() {
         return inventory;
     }
+
+    /**
+     *
+     * @param command
+     * @param arguments
+     */
     public void executeCommand(String command, String[] arguments) {
         switch(command) {
             case "go":
@@ -60,6 +66,10 @@ public class Player {
         }
     }
 
+    /**
+     *
+     * @param directionName
+     */
     public void goDirection(String directionName) {
         Map<String, Direction> directionDictionary = Location.generateDirectionDictionary(currentLocation);
         directionName = UserInput.capitalizeFirstLetter(directionName);
@@ -72,6 +82,10 @@ public class Player {
         }
     }
 
+    /**
+     *
+     * @param itemName
+     */
     public void takeItem(String itemName) {
         String unformattedItemName = itemName;
         itemName = itemName.toLowerCase();
@@ -84,6 +98,10 @@ public class Player {
         }
     }
 
+    /**
+     *
+     * @param itemName
+     */
     public void dropItem(String itemName) {
         boolean isItemInInventory = false;
         String unformattedItemName = itemName;
@@ -104,6 +122,11 @@ public class Player {
         }
     }
 
+    /**
+     *
+     * @param player
+     * @return
+     */
     public static boolean playerHasReachedEndingLocation(Player player) {
         return player.getCurrentLocation().getName().equals("Windhelm");
     }

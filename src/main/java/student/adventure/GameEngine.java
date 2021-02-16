@@ -14,6 +14,10 @@ public class GameEngine {
     public static Map<String, Location> locationDictionary;
     public static Player player;
 
+    /**
+     *
+     * @throws FileNotFoundException
+     */
     public static void runGame() throws FileNotFoundException {
         loadJson();
         printGameIntro();
@@ -37,12 +41,19 @@ public class GameEngine {
         while (!command.equals("quit") && !command.equals("exit"));
     }
 
+    /**
+     *
+     * @throws FileNotFoundException
+     */
     public static void loadJson() throws FileNotFoundException {
         Gson gson = new Gson();
         Reader reader = new FileReader("src/main/resources/skyrim.json");
         layout = gson.fromJson(reader, Layout.class);
     }
 
+    /**
+     *
+     */
     public static void printGameIntro() {
         System.out.println("Ralof: Hey, you. You’re finally awake. You were trying to cross the border, right?\n" +
                 "Walked right into that Imperial ambush, same as us, and that thief over there.");
@@ -53,6 +64,9 @@ public class GameEngine {
         System.out.println();
     }
 
+    /**
+     *
+     */
     public static void printDefaultInfo() {
         System.out.println(player.getCurrentLocation().getDescription());
         System.out.println("From here, you can go: "
@@ -60,6 +74,9 @@ public class GameEngine {
         System.out.println("Items visible: " + Location.getStringOfAvailableItems(player.getCurrentLocation()));
     }
 
+    /**
+     *
+     */
     public static void printGameEnding() {
         System.out.println("You've made it to Windhelm; you win");
     }
