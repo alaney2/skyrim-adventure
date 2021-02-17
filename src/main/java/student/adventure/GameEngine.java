@@ -14,8 +14,8 @@ public class GameEngine {
     public static Player player;
 
     /**
-     *
-     * @throws FileNotFoundException
+     * Method that starts running the game.
+     * @throws FileNotFoundException If JSON doesn't exist.
      */
     public static void runGame() throws FileNotFoundException {
         loadJson();
@@ -41,8 +41,8 @@ public class GameEngine {
     }
 
     /**
-     *
-     * @throws FileNotFoundException
+     * Loads JSON into existence.
+     * @throws FileNotFoundException If JSON doesn't exist.
      */
     public static void loadJson() throws FileNotFoundException {
         Gson gson = new Gson();
@@ -51,7 +51,7 @@ public class GameEngine {
     }
 
     /**
-     *
+     * Prints the dialogue at the start of the game.
      */
     public static void printGameIntro() {
         System.out.println("Ralof: Hey, you. You’re finally awake. You were trying to cross the border, right?\n" +
@@ -64,7 +64,7 @@ public class GameEngine {
     }
 
     /**
-     *
+     * Prints current location's description, available directions, and items visible.
      */
     public static void printDefaultInfo() {
         System.out.println(player.getCurrentLocation().getDescription());
@@ -74,7 +74,7 @@ public class GameEngine {
     }
 
     /**
-     *
+     * Prints what happens when the game ends.
      */
     public static void printGameEnding() {
         System.out.println("You've made it to Windhelm; you win");
