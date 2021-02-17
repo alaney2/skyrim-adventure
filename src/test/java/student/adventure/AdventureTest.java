@@ -76,6 +76,12 @@ public class AdventureTest {
     }
 
     @Test
+    public void goNorthWithExtraneousCommands() {
+        player.executeCommand(new String[] {"go", "north", "south", "east", "west"});
+        assertEquals("Riverwood", player.getCurrentLocation().getName());
+    }
+
+    @Test
     public void goNullDirection() {
         player.executeCommand(new String[] {"go", null});
         assertEquals("Helgen", player.getCurrentLocation().getName());
@@ -98,6 +104,24 @@ public class AdventureTest {
     @Test
     public void examine() {
         player.executeCommand(new String[] {"examine"});
+        String output = "You are at Helgen, a moderately-sized community near Skyrim's South border.\n" +
+                "From here, you can go: East, North, or West\n" +
+                "Items visible: sword, GlassDoor\n";
+        assertEquals(output, outContent.toString());
+    }
+
+    @Test
+    public void examineCaseInsensitive() {
+        player.executeCommand(new String[] {"ExAmInE"});
+        String output = "You are at Helgen, a moderately-sized community near Skyrim's South border.\n" +
+                "From here, you can go: East, North, or West\n" +
+                "Items visible: sword, GlassDoor\n";
+        assertEquals(output, outContent.toString());
+    }
+
+    @Test
+    public void examineWithExtraneousCommands() {
+        player.executeCommand(new String[] {"examine", "go", "random"});
         String output = "You are at Helgen, a moderately-sized community near Skyrim's South border.\n" +
                 "From here, you can go: East, North, or West\n" +
                 "Items visible: sword, GlassDoor\n";
@@ -223,5 +247,26 @@ public class AdventureTest {
         assert(player.getCurrentLocation().getItems().get(2).getItemName().equals("boots"));
         player.dropItem("boots");
         assert(player.getCurrentLocation().getItems().get(3).getItemName().equals("boots"));
+    }
+
+    @Test
+    public void inspectEmptyInventory() {
+        player.executeCommand(new String[] {"inventory"});
+        String output = "You have nothing in your inventory!\n";
+        assertEquals(output, outContent.toString());
+    }
+
+    @Test
+    public void inspectEmptyInventoryCaseInsensitive() {
+        player.executeCommand(new String[] {"InVeNToRY"});
+        String output = "You have nothing in your inventory!\n";
+        assertEquals(output, outContent.toString());
+    }
+
+    @Test
+    public void inspectEmptyInventoryWithExtraneousCommands() {
+        player.executeCommand(new String[] {"inventory", "go", "drop"});
+        String output = "You have nothing in your inventory!\n";
+        assertEquals(output, outContent.toString());
     }
 }

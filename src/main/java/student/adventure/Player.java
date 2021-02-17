@@ -52,9 +52,11 @@ public class Player {
                     GameEngine.printDefaultInfo();
                 }
                 break;
+
             case "examine":
                 GameEngine.printDefaultInfo();
                 break;
+
             case "take":
                 if (arguments.length < 2 || arguments[1] == null) {
                     System.out.println("Enter an item to take");
@@ -62,6 +64,7 @@ public class Player {
                     takeItem(arguments[1]);
                 }
                 break;
+
             case "drop":
                 if (arguments.length < 2 || arguments[1] == null) {
                     System.out.println("Enter an item to drop");
@@ -69,10 +72,13 @@ public class Player {
                     dropItem(arguments[1]);
                 }
                 break;
+
             case "inventory":
                 System.out.println(getStringOfItemsInInventory(GameEngine.player));
                 break;
+
             default:
+                System.out.println("Game should not reach this point!");
         }
     }
 
@@ -105,6 +111,7 @@ public class Player {
         String unformattedItemName = itemName;
         itemName = itemName.toLowerCase();
         Map<String, Item> itemDictionary = Location.generateItemDictionary(currentLocation);
+
         if (!itemDictionary.containsKey(itemName)) {
             System.out.println("There is no item " + "\"" + unformattedItemName + "\" at "
                     + GameEngine.player.getCurrentLocation().getName() + ".");
@@ -123,6 +130,7 @@ public class Player {
         boolean isItemInInventory = false;
         String unformattedItemName = itemName;
         itemName = itemName.toLowerCase();
+
         int inventoryIndex = 0;
         while (inventoryIndex < inventory.size() && !isItemInInventory) {
             if (inventory.get(inventoryIndex).getItemName().equalsIgnoreCase(itemName)) {
@@ -161,10 +169,14 @@ public class Player {
         String itemsInInventory = "You have";
         switch (NUMBER_OF_ITEMS) {
             case 0:
-                return itemsInInventory + " nothing in your inventory.";
+
+                return itemsInInventory + " nothing in your inventory!";
+
             case 1:
                 itemsInInventory += ": ";
+
                 return itemsInInventory + player.getInventory().get(0).getItemName();
+
             default:
                 itemsInInventory += ": ";
                 StringBuilder inventoryBuilder = new StringBuilder();

@@ -57,45 +57,6 @@ public class GameEngine {
         locationDictionary = Layout.generateLocationDictionary(layout);
     }
 
-    public static void checkJsonForNull() {
-        if (layout.getStartingLocation() == null) {
-            throw new NullPointerException("Starting location");
-        }
-        if (layout.getEndingLocation() == null) {
-            throw new NullPointerException("Ending location");
-        }
-        if (layout.getLocations() == null) {
-            throw new NullPointerException("Locations");
-        }
-        for (int i = 0; i < layout.getLocations().size(); i++) {
-            if (layout.getLocations().get(i) == null) {
-                throw new NullPointerException("Location at index " + i);
-            }
-            if (layout.getLocations().get(i).getName() == null) {
-                throw new NullPointerException("Location at index " + i);
-            }
-            if (layout.getLocations().get(i).getItems() == null) {
-                throw new NullPointerException("Location at index " + i);
-            }
-            for (int itemIndex = 0; itemIndex < layout.getLocations().get(i).getItems().size(); itemIndex++) {
-                if (layout.getLocations().get(i).getItems().get(itemIndex).getItemName() == null) {
-                    throw new NullPointerException("Location at index " + i);
-                }
-            }
-            if (layout.getLocations().get(i).getDirections() == null) {
-                throw new NullPointerException("Location at index " + i);
-            }
-            for (int directionIndex = 0; directionIndex < layout.getLocations().get(i).getItems().size(); directionIndex++) {
-                if (layout.getLocations().get(i).getItems().get(directionIndex).getItemName() == null) {
-                    throw new NullPointerException("Location at index " + i);
-                }
-            }
-            if (layout.getLocations().get(i).getDescription() == null) {
-                throw new NullPointerException("Location at index " + i);
-            }
-        }
-    }
-
     /**
      * Loads JSON into existence.
      * @throws FileNotFoundException If JSON doesn't exist.
@@ -137,5 +98,47 @@ public class GameEngine {
      */
     public static void printGameEnding() {
         System.out.println("You've made it to Windhelm; you win");
+    }
+
+    /**
+     * Checks if anything in the Json file is null and throws NullPointerException() if there is
+     */
+    public static void checkJsonForNull() {
+        if (layout.getStartingLocation() == null) {
+            throw new NullPointerException("Starting location");
+        }
+        if (layout.getEndingLocation() == null) {
+            throw new NullPointerException("Ending location");
+        }
+        if (layout.getLocations() == null) {
+            throw new NullPointerException("Locations");
+        }
+        for (int i = 0; i < layout.getLocations().size(); i++) {
+            if (layout.getLocations().get(i) == null) {
+                throw new NullPointerException("Location at index " + i);
+            }
+            if (layout.getLocations().get(i).getName() == null) {
+                throw new NullPointerException("Location at index " + i);
+            }
+            if (layout.getLocations().get(i).getItems() == null) {
+                throw new NullPointerException("Location at index " + i);
+            }
+            for (int itemIndex = 0; itemIndex < layout.getLocations().get(i).getItems().size(); itemIndex++) {
+                if (layout.getLocations().get(i).getItems().get(itemIndex).getItemName() == null) {
+                    throw new NullPointerException("Location at index " + i);
+                }
+            }
+            if (layout.getLocations().get(i).getDirections() == null) {
+                throw new NullPointerException("Location at index " + i);
+            }
+            for (int directionIndex = 0; directionIndex < layout.getLocations().get(i).getItems().size(); directionIndex++) {
+                if (layout.getLocations().get(i).getItems().get(directionIndex).getItemName() == null) {
+                    throw new NullPointerException("Location at index " + i);
+                }
+            }
+            if (layout.getLocations().get(i).getDescription() == null) {
+                throw new NullPointerException("Location at index " + i);
+            }
+        }
     }
 }
