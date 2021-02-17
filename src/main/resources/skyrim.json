@@ -7,7 +7,7 @@
       "description": "You are at Helgen, a moderately-sized community near Skyrim's South border.",
       "directions": [
         {
-          "directionName": "East",
+          "directionName": "West",
           "location": "Falkreath"
         },
         {
@@ -15,7 +15,7 @@
           "location": "Riverwood"
         },
         {
-          "directionName": "West",
+          "directionName": "East",
           "location": "Ivarstead"
         }
       ],
