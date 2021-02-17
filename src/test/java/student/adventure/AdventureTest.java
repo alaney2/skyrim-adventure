@@ -34,6 +34,7 @@ public class AdventureTest {
         layout = gson.fromJson(reader, Layout.class);
         locationDictionary = Layout.generateLocationDictionary(layout);
         player = new Player(locationDictionary.get(layout.getStartingLocation()), new ArrayList<>());
+        GameEngine.loadJson();
     }
 
     @Before
@@ -67,15 +68,14 @@ public class AdventureTest {
 //        assertEquals(description, outContent.toString());
 //    }
 //
-//    @Test
-//    public void goWithoutArgument() {
-//        player.executeCommand("go", new String[] {"go", "north"});
-//        assertEquals("Riverwood", player.getCurrentLocation().getName());
-//    }
+    @Test
+    public void goWithoutArgument() {
+        player.executeCommand(new String[] {"go", "north"});
+    }
 
     @Test
     public void goNullDirection() {
-
+        player.executeCommand(new String[] {"go", null});
     }
 
     @Test

@@ -1,7 +1,6 @@
 package student.adventure;
 
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 public class Player {
@@ -78,15 +77,18 @@ public class Player {
      * @param directionName The direction to move in.
      */
     public String goDirection(String directionName) {
+        Map<String, Location> locationDictionary = Layout.generateLocationDictionary(GameEngine.layout);
         Map<String, Direction> directionDictionary = Location.generateDirectionDictionary(currentLocation);
         directionName = UserInput.capitalizeFirstLetter(directionName);
 
         if (!directionDictionary.containsKey(directionName)) {
             System.out.println("You can't go " + "\"" + directionName + "\"!");
+
             return "You can't go " + "\"" + directionName + "\"!";
         } else {
             String locationName = directionDictionary.get(directionName).getLocation();
-            this.setCurrentLocation(GameEngine.locationDictionary.get(locationName));
+            setCurrentLocation(locationDictionary.get(locationName));
+
             return locationName;
         }
     }
@@ -139,6 +141,7 @@ public class Player {
      * @return Whether the player has reached the ending location.
      */
     public static boolean playerHasReachedEndingLocation(Player player) {
+
         return player.getCurrentLocation().getName().equals("Windhelm");
     }
 
