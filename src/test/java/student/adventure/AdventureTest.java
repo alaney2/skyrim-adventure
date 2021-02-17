@@ -82,6 +82,13 @@ public class AdventureTest {
     }
 
     @Test
+    public void goWithoutArgument() {
+        player.executeCommand(new String[] {"go"});
+        String output = "Enter a direction to go\n";
+        assertEquals(output, outContent.toString());
+    }
+
+    @Test
     public void goNullDirection() {
         player.executeCommand(new String[] {"go", null});
         assertEquals("Helgen", player.getCurrentLocation().getName());
@@ -202,7 +209,7 @@ public class AdventureTest {
         inventory.add(new Item("sword"));
         player.setInventory(inventory);
         player.dropItem("sword");
-        String output = "Item \"sword\" dropped.";
+        String output = "Item \"sword\" dropped.\n";
         assertEquals(output, outContent.toString());
     }
 

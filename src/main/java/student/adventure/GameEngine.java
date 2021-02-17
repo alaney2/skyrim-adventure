@@ -97,7 +97,7 @@ public class GameEngine {
      * Prints what happens when the game ends.
      */
     public static void printGameEnding() {
-        System.out.println("You've made it to Windhelm; you win");
+        System.out.println("You've made it to Windhelm; you win?");
     }
 
     /**
