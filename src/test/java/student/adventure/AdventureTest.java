@@ -11,6 +11,7 @@ import org.junit.Test;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Map;
 
 
 public class AdventureTest {
@@ -24,13 +25,15 @@ public class AdventureTest {
     private static Reader reader;
     private static Layout layout;
     private static Player player;
+    private static Map<String, Location> locationDictionary;
 
     @Before
     public void setUp() throws FileNotFoundException {
         gson = new Gson();
         reader = new FileReader("src/main/resources/skyrim.json");
         layout = gson.fromJson(reader, Layout.class);
-        player = new Player(Layout.generateLocationDictionary(layout).get(layout.getStartingLocation()), new ArrayList<>());
+        locationDictionary = Layout.generateLocationDictionary(layout);
+        player = new Player(locationDictionary.get(layout.getStartingLocation()), new ArrayList<>());
     }
 
     @Before
@@ -53,17 +56,22 @@ public class AdventureTest {
     }
 
     @Test
-    public void examineCurrentLocation() {
-        player.executeCommand("examine", new String[] {"examine"});
-        //System.out.print("You have arrived at Windhelm, the City of Kings.");
-        String description = "You have arrived at Windhelm, the City of Kings.\n";
-        assertEquals(description, outContent.toString());
+    public void capitalizeFirstLetter() {
+        assertEquals("String", UserInput.capitalizeFirstLetter("sTrInG"));
     }
 
-    @Test
-    public void goWithoutArgument() {
-
-    }
+//    @Test
+//    public void examineCurrentLocation() {
+//        player.executeCommand("examine", new String[] {"examine"});
+//        String description = "You have arrived at Windhelm, the City of Kings.\n";
+//        assertEquals(description, outContent.toString());
+//    }
+//
+//    @Test
+//    public void goWithoutArgument() {
+//        player.executeCommand("go", new String[] {"go", "north"});
+//        assertEquals("Riverwood", player.getCurrentLocation().getName());
+//    }
 
     @Test
     public void goNullDirection() {

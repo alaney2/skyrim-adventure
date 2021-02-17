@@ -5,7 +5,6 @@ import com.google.gson.Gson;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.Reader;
-import java.sql.SQLOutput;
 import java.util.*;
 
 
@@ -25,10 +24,10 @@ public class GameEngine {
         locationDictionary = Layout.generateLocationDictionary(layout);
         player = new Player(locationDictionary.get(layout.getStartingLocation()), new ArrayList<>());
 
+        printDefaultInfo();
+
         String command;
         do {
-            printDefaultInfo();
-
             String[] arguments = UserInput.handleUserInput();
             command = arguments[0].toLowerCase();
             player.executeCommand(command, arguments);

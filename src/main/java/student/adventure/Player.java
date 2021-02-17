@@ -46,7 +46,11 @@ public class Player {
                     System.out.println("Enter a direction to go");
                 } else {
                     goDirection(arguments[1]);
+                    GameEngine.printDefaultInfo();
                 }
+                break;
+            case "examine":
+                GameEngine.printDefaultInfo();
                 break;
             case "take":
                 if (arguments.length < 2 || arguments[1] == null) {
@@ -70,15 +74,17 @@ public class Player {
      *
      * @param directionName
      */
-    public void goDirection(String directionName) {
+    public String goDirection(String directionName) {
         Map<String, Direction> directionDictionary = Location.generateDirectionDictionary(currentLocation);
         directionName = UserInput.capitalizeFirstLetter(directionName);
 
         if (!directionDictionary.containsKey(directionName)) {
             System.out.println("You can't go " + "\"" + directionName + "\"!");
+            return "You can't go " + "\"" + directionName + "\"!";
         } else {
             String locationName = directionDictionary.get(directionName).getLocation();
             this.setCurrentLocation(GameEngine.locationDictionary.get(locationName));
+            return locationName;
         }
     }
 
