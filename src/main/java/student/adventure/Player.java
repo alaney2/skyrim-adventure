@@ -101,6 +101,7 @@ public class Player {
         } else {
             inventory.add(itemDictionary.get(itemName));
             currentLocation.removeItem(itemDictionary.get(itemName));
+            System.out.println("Item " + unformattedItemName + " taken.");
         }
     }
 
@@ -118,6 +119,7 @@ public class Player {
                 Item validItem = inventory.get(inventoryIndex);
                 inventory.remove(validItem);
                 currentLocation.addItem(validItem);
+                System.out.println("Item " + unformattedItemName + " dropped.");
 
                 isItemInInventory = true;
             }
