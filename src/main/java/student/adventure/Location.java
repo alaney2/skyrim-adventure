@@ -36,9 +36,9 @@ public class Location {
     }
 
     /**
-     *
-     * @param location
-     * @return
+     * Creates a map with key being direction name and value being direction object.
+     * @param location location of available directions
+     * @return map of string direction name to direction object
      */
     public static Map<String, Direction> generateDirectionDictionary(Location location) {
         Map<String, Direction> directionDictionary = new HashMap<>();
@@ -50,9 +50,9 @@ public class Location {
     }
 
     /**
-     *
-     * @param location
-     * @return
+     * Creates a map with key being item name and value being item object.
+     * @param location location of items
+     * @return map of string item name to item object
      */
     public static Map<String, Item> generateItemDictionary(Location location) {
         Map<String, Item> itemDictionary = new HashMap<>();
@@ -64,9 +64,9 @@ public class Location {
     }
 
     /**
-     *
-     * @param location
-     * @return
+     * Creates a formatted string of available directions from current location.
+     * @param location location to get directions from
+     * @return a string of available direction names
      */
     public static String getFormattedStringOfAvailableDirections(Location location) {
         final int NUMBER_OF_DIRECTIONS = location.getDirections().size();
@@ -95,9 +95,9 @@ public class Location {
     }
 
     /**
-     *
-     * @param location
-     * @return
+     * Creates a string of available items in the current location.
+     * @param location location to get items from
+     * @return string of item names
      */
     public static String getStringOfAvailableItems(Location location) {
         final int NUMBER_OF_ITEMS = location.getItems().size();

@@ -38,8 +38,6 @@ public class UserInput {
         System.out.print("> ");
         String input = scanner.nextLine();
 
-        // return formatAndTokenizeString(input);
-
         return input.split("\\s+");
     }
 

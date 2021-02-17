@@ -22,9 +22,9 @@ public class Layout {
     }
 
     /**
-     *
-     * @param layout
-     * @return
+     * Creates a map with key being location name and value being location object.
+     * @param layout class that contains all locations
+     * @return map of string location name to location object
      */
     public static Map<String, Location> generateLocationDictionary(Layout layout) {
         Map<String, Location> locationMap = new HashMap<>();
