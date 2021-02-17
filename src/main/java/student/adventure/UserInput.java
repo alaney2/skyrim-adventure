@@ -10,8 +10,8 @@ public class UserInput {
             Arrays.asList("quit", "exit", "go", "examine", "take", "drop"));
 
     /**
-     *
-     * @return
+     * Keeps requesting for input until it isn't whitespace and the first word is a command.
+     * @return An array of String arguments split by whitespace with the first element being a command.
      */
     public static String[] handleUserInput() {
         String[] arguments = getTokenizedArguments();
@@ -30,8 +30,8 @@ public class UserInput {
     }
 
     /**
-     *
-     * @return
+     * Takes in input and splits the String into an array of Strings separated by whitespace.
+     * @return An array of String arguments split by whitespace.
      */
     public static String[] getTokenizedArguments() {
         Scanner scanner = new Scanner(System.in);
@@ -44,9 +44,9 @@ public class UserInput {
     }
 
     /**
-     *
-     * @param input
-     * @return
+     * Capitalizes the first letter of a String.
+     * @param input String to modify.
+     * @return A String with the first letter capitalized and the rest lowercase.
      */
     public static String capitalizeFirstLetter(String input) {
         input = input.toLowerCase();

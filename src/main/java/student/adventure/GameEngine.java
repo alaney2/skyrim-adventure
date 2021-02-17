@@ -30,7 +30,7 @@ public class GameEngine {
         do {
             String[] arguments = UserInput.handleUserInput();
             command = arguments[0].toLowerCase();
-            player.executeCommand(command, arguments);
+            player.executeCommand(arguments);
 
             if (Player.playerHasReachedEndingLocation(player)) {
                 printGameEnding();

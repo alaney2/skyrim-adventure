@@ -35,11 +35,11 @@ public class Player {
     }
 
     /**
-     *
-     * @param command
-     * @param arguments
+     * Executes a command.
+     * @param arguments Array of Strings with the first element being the command.
      */
-    public void executeCommand(String command, String[] arguments) {
+    public void executeCommand(String[] arguments) {
+        String command = arguments[0].toLowerCase();
         switch(command) {
             case "go":
                 if (arguments.length < 2 || arguments[1] == null) {
