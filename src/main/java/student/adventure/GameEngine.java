@@ -24,8 +24,8 @@ public class GameEngine {
         checkJsonForNull();
         printGameIntro();
 
-        locationDictionary = Layout.generateLocationDictionary(layout);
-        player = new Player(locationDictionary.get(layout.getStartingLocation()), new ArrayList<>());
+        createLocationDictionary();
+        createPlayer();
 
         printDefaultInfo();
 
@@ -37,10 +37,24 @@ public class GameEngine {
 
             if (Player.playerHasReachedEndingLocation(player)) {
                 printGameEnding();
-                break;
+                return;
             }
         }
         while (!command.equals("quit") && !command.equals("exit"));
+    }
+
+    /**
+     * Creates an instance of player starting at starting location with nothing in inventory.
+     */
+    public static void createPlayer() {
+        player = new Player(locationDictionary.get(layout.getStartingLocation()), new ArrayList<>());
+    }
+
+    /**
+     * Creates a location dictionary which maps name of location to its location object.
+     */
+    public static void createLocationDictionary() {
+        locationDictionary = Layout.generateLocationDictionary(layout);
     }
 
     public static void checkJsonForNull() {

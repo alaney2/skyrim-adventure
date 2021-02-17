@@ -33,6 +33,10 @@ public class Player {
         return inventory;
     }
 
+    public void setInventory(List<Item> inventory) {
+        this.inventory = inventory;
+    }
+
     /**
      * Executes a command.
      * @param arguments array of Strings with the first element being the command
@@ -102,11 +106,12 @@ public class Player {
         itemName = itemName.toLowerCase();
         Map<String, Item> itemDictionary = Location.generateItemDictionary(currentLocation);
         if (!itemDictionary.containsKey(itemName)) {
-            System.out.println("There is no item " + "\"" + unformattedItemName + "\" in the room.");
+            System.out.println("There is no item " + "\"" + unformattedItemName + "\" at "
+                    + GameEngine.player.getCurrentLocation().getName() + ".");
         } else {
             inventory.add(itemDictionary.get(itemName));
             currentLocation.removeItem(itemDictionary.get(itemName));
-            System.out.println("Item " + unformattedItemName + " taken.");
+            System.out.println("Item \"" + unformattedItemName + "\" taken.");
         }
     }
 
@@ -124,7 +129,7 @@ public class Player {
                 Item validItem = inventory.get(inventoryIndex);
                 inventory.remove(validItem);
                 currentLocation.addItem(validItem);
-                System.out.println("Item " + unformattedItemName + " dropped.");
+                System.out.println("Item \"" + unformattedItemName + "\" dropped.");
 
                 isItemInInventory = true;
             }
