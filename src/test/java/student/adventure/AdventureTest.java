@@ -114,8 +114,17 @@ public class AdventureTest {
     }
 
     @Test
+    public void dropTwoOfTheSameItems() {
+
+    }
+
+    @Test
     public void takeItemWithoutArgument() {
 
     }
 
+    @Test
+    public void takeTwoOfTheSameItems() {
+
+    }
 }

@@ -24,13 +24,11 @@
           "itemName": "sword"
         },
         {
-          "itemName" : "shield"
+          "itemName": "gladiator"
+
         },
         {
-          "itemName" : "coin"
-        },
-        {
-          "itemName" : "Boots"
+          "itemName" : "GlassDoor"
         }
       ]
     },
@@ -48,7 +46,9 @@
         }
       ],
       "items": [
-
+        {
+          "itemName" : "shield"
+        }
       ]
     },
     {
@@ -69,12 +69,14 @@
         }
       ],
       "items": [
-
+        {
+          "itemName" : "coins(50)"
+        }
       ]
     },
     {
       "name": "Ivarstead",
-      "description": "You ar at Ivarstead. There is nothing here.",
+      "description": "You are at Ivarstead. There is nothing here.",
       "directions": [
         {
           "directionName": "East",
@@ -86,7 +88,9 @@
         }
       ],
       "items": [
-
+        {
+          "itemName": "boots"
+        }
       ]
     },
     {
@@ -107,7 +111,12 @@
         }
       ],
       "items": [
-
+        {
+          "itemName": "ElvenVillage"
+        },
+        {
+          "itemName": "Chestplate"
+        }
       ]
     },
     {
@@ -120,7 +129,12 @@
         }
       ],
       "items": [
-
+        {
+          "itemName": "table"
+        },
+        {
+          "itemName": "fishingBoat"
+        }
       ]
     },
     {
@@ -134,6 +148,11 @@
         {
           "directionName": "Northwest",
           "location": "Windhelm"
+        }
+      ],
+      "items" : [
+        {
+          "itemName": "horse"
         }
       ]
     },
@@ -151,7 +170,12 @@
         }
       ],
       "items": [
-
+        {
+          "itemName": "prostitute"
+        },
+        {
+          "itemName": "carriages"
+        }
       ]
     },
     {
@@ -172,7 +196,9 @@
         }
       ],
       "items": [
-
+        {
+          "itemName": "Stool"
+        }
       ]
     },
     {
@@ -189,7 +215,9 @@
         }
       ],
       "items": [
-
+        {
+          "itemName": "apprentice"
+        }
       ]
     },
     {
@@ -216,6 +244,11 @@
           "directionName": "Southwest",
           "location": "Markarth"
         }
+      ],
+      "items": [
+        {
+          "itemName": "shears"
+        }
       ]
     },
     {
@@ -228,7 +261,9 @@
         }
       ],
       "items": [
-
+        {
+          "itemName": "breadstick"
+        }
       ]
     },
     {
@@ -249,7 +284,9 @@
         }
       ],
       "items": [
-
+        {
+          "itemName": "Windowpane"
+        }
       ]
     },
     {
@@ -266,7 +303,9 @@
         }
       ],
       "items": [
-
+        {
+          "itemName": "SilverIngot"
+        }
       ]
     },
     {
@@ -287,7 +326,9 @@
         }
       ],
       "items": [
-
+        {
+          "itemName": "Beggar"
+        }
       ]
     }
   ]
