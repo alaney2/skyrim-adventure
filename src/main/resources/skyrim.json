@@ -24,10 +24,6 @@
           "itemName": "sword"
         },
         {
-          "itemName": "gladiator"
-
-        },
-        {
           "itemName" : "GlassDoor"
         }
       ]
@@ -46,6 +42,10 @@
         }
       ],
       "items": [
+        {
+          "itemName": "gladiator"
+
+        },
         {
           "itemName" : "shield"
         }

@@ -66,6 +66,9 @@ public class Player {
                     dropItem(arguments[1]);
                 }
                 break;
+            case "inventory":
+                System.out.println(getStringOfItemsInInventory(GameEngine.player));
+                break;
             default:
         }
     }
@@ -137,5 +140,28 @@ public class Player {
      */
     public static boolean playerHasReachedEndingLocation(Player player) {
         return player.getCurrentLocation().getName().equals("Windhelm");
+    }
+
+    public static String getStringOfItemsInInventory(Player player) {
+        final int NUMBER_OF_ITEMS = player.getInventory().size();
+
+        String itemsInInventory = "You have";
+        switch (NUMBER_OF_ITEMS) {
+            case 0:
+                return itemsInInventory + " nothing in your inventory.";
+            case 1:
+                itemsInInventory += ": ";
+                return itemsInInventory + player.getInventory().get(0).getItemName();
+            default:
+                itemsInInventory += ": ";
+                StringBuilder inventoryBuilder = new StringBuilder();
+                for (int i = 0; i < NUMBER_OF_ITEMS - 1; i++) {
+                    inventoryBuilder.append(player.getInventory().get(i).getItemName());
+                    inventoryBuilder.append(", ");
+                }
+                inventoryBuilder.append(player.getInventory().get(player.getInventory().size() - 1).getItemName());
+
+                return itemsInInventory + inventoryBuilder.toString();
+        }
     }
 }

@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class UserInput {
     public static final Set<String> userCommands = new HashSet<>(
-            Arrays.asList("quit", "exit", "go", "examine", "take", "drop"));
+            Arrays.asList("quit", "exit", "go", "examine", "take", "drop", "inventory"));
 
     /**
      * Keeps requesting for input until it isn't whitespace and the first word is a command.
