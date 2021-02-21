@@ -80,7 +80,7 @@
     {
       "name": "Ivarstead",
       "description": "You are at Ivarstead. There is nothing here.",
-      "imageUrl": "https://static.wikia.nocookie.net/elderscrolls/images/a/a0/Ivarstead.png/revision/latest?cb=20120123212315",
+      "imageUrl": "http://oyster.ignimgs.com/mediawiki/apis.ign.com/the-elder-scrolls-5-skyrim/2/2b/Sky_Ivarstead.jpg",
       "directions": [
         {
           "directionName": "East",
@@ -100,7 +100,7 @@
     {
       "name": "Lake Geir",
       "description": "You are at the banks alongside Lake Geir. You see an island sitting in the center.",
-      "imageUrl": "https://static.wikia.nocookie.net/skyrim_gamepedia/images/8/8e/LakeGeir.jpg/revision/latest/scale-to-width-down/350?cb=20141122005602",
+      "imageUrl": "https://images.uesp.net/thumb/3/33/SR-place-Lake_Geir_02.jpg/400px-SR-place-Lake_Geir_02.jpg",
       "directions": [
         {
           "directionName": "Northeast",
@@ -127,7 +127,7 @@
     {
       "name": "Riften",
       "description": "You are at Riften, a large city bisected by a large canal, with a good portion of the city spilling over the water atop large, wooden, piers.",
-      "imageUrl": "https://static.wikia.nocookie.net/elderscrolls/images/5/58/Riftenmain.png/revision/latest?cb=20121212222949",
+      "imageUrl": "http://1.bp.blogspot.com/-vmVcgD9oVIw/T6srBpWW6hI/AAAAAAAABFs/TvW0olvkQcQ/s1600/Riftenmain.png",
       "directions": [
         {
           "directionName": "Northwest",
