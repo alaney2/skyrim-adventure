@@ -57,6 +57,8 @@ public class GameStatus {
         this.commandOptions = commandOptions;
     }
 
+    public GameStatus() { }
+
     public boolean isError() {
         return error;
     }
@@ -83,5 +85,33 @@ public class GameStatus {
 
     public Map<String, List<String>> getCommandOptions() {
         return commandOptions;
+    }
+
+    public void setError(boolean error) {
+        this.error = error;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
+    }
+
+    public void setState(AdventureState state) {
+        this.state = state;
+    }
+
+    public void setCommandOptions(Map<String, List<String>> commandOptions) {
+        this.commandOptions = commandOptions;
     }
 }

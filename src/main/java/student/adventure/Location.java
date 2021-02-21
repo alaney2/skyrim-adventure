@@ -1,5 +1,6 @@
 package student.adventure;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,6 +49,14 @@ public class Location {
         return directionDictionary;
     }
 
+    public static List<String> getAvailableDirectionNames(Location location) {
+        List<String> availableDirectionNames = new ArrayList<>();
+        for (Direction direction: location.getDirections()) {
+            availableDirectionNames.add(direction.getDirectionName());
+        }
+        return availableDirectionNames;
+    }
+
     /**
      * Creates a map with key being item name and value being item object.
      * @param location location of items
@@ -60,6 +69,14 @@ public class Location {
         }
 
         return itemDictionary;
+    }
+
+    public static List<String> getAvailableItemsToTake(Location location) {
+        List<String> availableItems = new ArrayList<>();
+        for (Item item: location.getItems()) {
+            availableItems.add(item.getItemName());
+        }
+        return availableItems;
     }
 
     /**

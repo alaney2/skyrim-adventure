@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class UserInput {
-    public static final Set<String> userCommands = new HashSet<>(
+    private static final Set<String> userCommands = new HashSet<>(
             Arrays.asList("quit", "exit", "go", "examine", "take", "drop", "inventory"));
 
     /**

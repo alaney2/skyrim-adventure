@@ -1,5 +1,6 @@
 package student.adventure;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -49,12 +50,11 @@ public class Player {
                     System.out.println("Enter a direction to go");
                 } else {
                     goDirection(arguments[1]);
-                    GameEngine.printDefaultInfo();
                 }
                 break;
 
             case "examine":
-                GameEngine.printDefaultInfo();
+                System.out.println(Message.getDefaultInfo(GameEngine.player));
                 break;
 
             case "take":
@@ -188,5 +188,13 @@ public class Player {
 
                 return itemsInInventory + inventoryBuilder.toString();
         }
+    }
+
+    public List<String> getAvailableItemsToDrop() {
+        List<String> availableItems = new ArrayList<>();
+        for (Item item: inventory) {
+            availableItems.add(item.getItemName());
+        }
+        return availableItems;
     }
 }

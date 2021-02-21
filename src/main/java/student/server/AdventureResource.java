@@ -3,13 +3,14 @@ package student.server;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.io.FileNotFoundException;
 
 @Path("/")
 public class AdventureResource {
     /**
      * The single static adventure service instance used for this API.
      */
-    private static AdventureService service; // = new YourAdventureServiceHere();
+    private static AdventureService service = new SkyrimAdventureService(); // = new YourAdventureServiceHere();
 
     /**
      * The API endpoint to test connectivity.
@@ -19,7 +20,7 @@ public class AdventureResource {
     @Path("ping")
     public String ping() {
         // TODO: This method should return `pong`.
-        return "";
+        return "pong";
     }
 
     /**
@@ -94,16 +95,16 @@ public class AdventureResource {
         return getGame(id);
     }
 
-    /**
-     * The API endpoint to return an ordered mapping of players to "high" scores.
-     * @return a response with a sorted map of "high" scores
-     */
-    @GET
-    @Path("leaderboard")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response fetchLeaderboard() {
-        return Response.ok(service.fetchLeaderboard()).build();
-    }
+//    /**
+//     * The API endpoint to return an ordered mapping of players to "high" scores.
+//     * @return a response with a sorted map of "high" scores
+//     */
+//    @GET
+//    @Path("leaderboard")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response fetchLeaderboard() {
+//        return Response.ok(service.fetchLeaderboard()).build();
+//    }
 
     /**
      * Helper method to build an `instanceNotFound` error.

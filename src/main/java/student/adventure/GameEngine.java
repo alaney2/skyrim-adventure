@@ -15,11 +15,28 @@ public class GameEngine {
     public static Map<String, Location> locationDictionary;
     public static Player player;
 
+    public Layout getLayout() {
+        return layout;
+    }
+
+    public Map<String, Location> getLocationDictionary() {
+        return locationDictionary;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public GameEngine(Layout layout) {
+        locationDictionary = Layout.generateLocationDictionary(layout);
+        player = new Player(locationDictionary.get(layout.getStartingLocation()), new ArrayList<>());
+    }
+
     /**
      * Method that starts running the game.
      * @throws FileNotFoundException If JSON doesn't exist.
      */
-    public static void runGame() throws FileNotFoundException, InterruptedException {
+    public static void runGame() throws FileNotFoundException {
         loadJson();
         checkJsonForNull();
         printGameIntro();
@@ -27,7 +44,7 @@ public class GameEngine {
         createLocationDictionary();
         createPlayer();
 
-        printDefaultInfo();
+        System.out.println(Message.getDefaultInfo(player));
 
         String command;
         do {
@@ -70,28 +87,26 @@ public class GameEngine {
     /**
      * Prints the dialogue at the start of the game.
      */
-    public static void printGameIntro() throws InterruptedException {
+    public static void printGameIntro() {
         System.out.println("Ralof: Hey, you. You’re finally awake. You were trying to cross the border, right?\n" +
                 "Walked right into that Imperial ambush, same as us, and that thief over there.");
         System.out.println();
-        TimeUnit.SECONDS.sleep(2);
 
         System.out.println("Lokir: Damn you Stormcloaks. Skyrim was fine until you came along. Empire was nice and lazy.\n" +
                 "If they hadn't been looking for you, I could’ve stolen that horse and been half way to Hammerfell.\n" +
                 "You there. You and me — we should be here. It’s these Stormcloaks the Empire wants.");
         System.out.println();
-        TimeUnit.SECONDS.sleep(2);
     }
 
-    /**
-     * Prints current location's description, available directions, and items visible.
-     */
-    public static void printDefaultInfo() {
-        System.out.println(player.getCurrentLocation().getDescription());
-        System.out.println("From here, you can go: "
-                + Location.getFormattedStringOfAvailableDirections(player.getCurrentLocation()));
-        System.out.println("Items visible: " + Location.getStringOfAvailableItems(player.getCurrentLocation()));
-    }
+//    /**
+//     * Prints current location's description, available directions, and items visible.
+//     */
+//    public static void printDefaultInfo() {
+//        System.out.println(player.getCurrentLocation().getDescription());
+//        System.out.println("From here, you can go: "
+//                + Location.getFormattedStringOfAvailableDirections(player.getCurrentLocation()));
+//        System.out.println("Items visible: " + Location.getStringOfAvailableItems(player.getCurrentLocation()));
+//    }
 
     /**
      * Prints what happens when the game ends.

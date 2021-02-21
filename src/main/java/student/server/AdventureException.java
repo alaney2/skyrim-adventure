@@ -1,5 +1,7 @@
 package student.server;
 
+import java.io.FileNotFoundException;
+
 /**
  * An exception thrown if there was an issue starting a new adventure game.
  */
