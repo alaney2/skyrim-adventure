@@ -8,24 +8,24 @@
       "imageUrl": "https://i.pinimg.com/originals/d9/99/72/d99972b00cf204ce6c26257991f092d8.jpg",
       "directions": [
         {
-          "directionName": "West",
-          "location": "Falkreath"
-        },
-        {
           "directionName": "North",
           "location": "Riverwood"
         },
         {
           "directionName": "East",
           "location": "Ivarstead"
+        },
+        {
+          "directionName": "West",
+          "location": "Falkreath"
         }
       ],
       "items": [
         {
-          "itemName": "Sword"
+          "itemName" : "GlassDoor"
         },
         {
-          "itemName" : "GlassDoor"
+          "itemName": "Sword"
         }
       ]
     },
@@ -35,12 +35,12 @@
       "imageUrl": "http://oyster.ignimgs.com/mediawiki/apis.ign.com/the-elder-scrolls-5-skyrim/0/08/Sky_Falkreath.jpg",
       "directions": [
         {
-          "directionName": "East",
-          "location": "Helgen"
-        },
-        {
           "directionName": "Northeast",
           "location": "Riverwood"
+        },
+        {
+          "directionName": "East",
+          "location": "Helgen"
         }
       ],
       "items": [
@@ -63,12 +63,12 @@
           "location": "Whiterun"
         },
         {
-          "directionName": "South",
-          "location": "Helgen"
-        },
-        {
           "directionName": "Northwest",
           "location": "Rorikstead"
+        },
+        {
+          "directionName": "South",
+          "location": "Helgen"
         }
       ],
       "items": [
@@ -117,10 +117,10 @@
       ],
       "items": [
         {
-          "itemName": "ElvenVillage"
+          "itemName": "Chestplate"
         },
         {
-          "itemName": "Chestplate"
+          "itemName": "Elf"
         }
       ]
     },
@@ -136,10 +136,10 @@
       ],
       "items": [
         {
-          "itemName": "Table"
+          "itemName": "FishingBoat"
         },
         {
-          "itemName": "FishingBoat"
+          "itemName": "Table"
         }
       ]
     },
@@ -149,12 +149,12 @@
       "imageUrl": "https://i.redd.it/nwvmeyxgjfr21.jpg",
       "directions": [
         {
-          "directionName": "Southwest",
-          "location": "Lake Geir"
-        },
-        {
           "directionName": "Northwest",
           "location": "Windhelm"
+        },
+        {
+          "directionName": "Southwest",
+          "location": "Lake Geir"
         }
       ],
       "items" : [
@@ -169,20 +169,20 @@
       "imageUrl": "https://i.pinimg.com/originals/99/5f/15/995f1503c8cc8913c3534ff8911ff9d1.png",
       "directions": [
         {
-          "directionName": "Southeast",
-          "location": "Eastmarch"
-        },
-        {
           "directionName": "Northwest",
           "location": "Winterhold"
+        },
+        {
+          "directionName": "Southeast",
+          "location": "Eastmarch"
         }
       ],
       "items": [
         {
-          "itemName": "Prostitute"
+          "itemName": "Carriage"
         },
         {
-          "itemName": "Carriage"
+          "itemName": "Arrow"
         }
       ]
     },
@@ -192,12 +192,12 @@
       "imageUrl": "http://oyster.ignimgs.com/mediawiki/apis.ign.com/the-elder-scrolls-5-skyrim/b/be/Sky_Winterhold.jpg",
       "directions": [
         {
-          "directionName": "Southeast",
-          "location": "Windhelm"
-        },
-        {
           "directionName": "Northwest",
           "location": "Dawnstar"
+        },
+        {
+          "directionName": "Southeast",
+          "location": "Windhelm"
         },
         {
           "directionName": "Southwest",
@@ -308,12 +308,12 @@
       "imageUrl": "https://esosslfiles-a.akamaihd.net/cms/2020/09/b146bb9a1437c2f4371c21af7d44e05b.jpg",
       "directions": [
         {
-          "directionName": "East",
-          "location": "Rorikstead"
-        },
-        {
           "directionName": "Northeast",
           "location": "Morthal"
+        },
+        {
+          "directionName": "East",
+          "location": "Rorikstead"
         }
       ],
       "items": [
@@ -328,16 +328,16 @@
       "imageUrl": "https://i.pinimg.com/originals/bf/ed/58/bfed58d14e664f6f890c950d4c2fa8c4.png",
       "directions": [
         {
-          "directionName": "West",
-          "location": "Rorikstead"
-        },
-        {
           "directionName": "Northwest",
           "location": "Morthal"
         },
         {
           "directionName": "South",
           "location": "Riverwood"
+        },
+        {
+          "directionName": "West",
+          "location": "Rorikstead"
         }
       ],
       "items": [
