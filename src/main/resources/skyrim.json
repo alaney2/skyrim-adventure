@@ -32,7 +32,7 @@
     {
       "name": "Falkreath",
       "description": "You are at Falkreath, a major city famous for its large graveyard.",
-      "imageUrl": "https://static.wikia.nocookie.net/elderscrolls/images/9/97/Falkreathmain.png/revision/latest?cb=20121212142220",
+      "imageUrl": "http://oyster.ignimgs.com/mediawiki/apis.ign.com/the-elder-scrolls-5-skyrim/0/08/Sky_Falkreath.jpg",
       "directions": [
         {
           "directionName": "East",
@@ -213,7 +213,7 @@
     {
       "name": "Dawnstar",
       "description": "You are at Dawnstar, a relatively small town. It resides in perpetual snow and ice.",
-      "imageUrl": "https://static.wikia.nocookie.net/elderscrolls/images/e/ee/Dawnstar_%28Skyrim%29.png/revision/latest?cb=20120911012913",
+      "imageUrl": "http://oyster.ignimgs.com/mediawiki/apis.ign.com/the-elder-scrolls-5-skyrim/a/a9/Sky_Dawnstar.jpg",
       "directions": [
         {
           "directionName": "Southeast",
@@ -281,7 +281,7 @@
     {
       "name": "Rorikstead",
       "description": "You are at Rorikstead, a settlement consisting of two cottages, an inn, and a manor.",
-      "imageUrl": "https://static.wikia.nocookie.net/elderscrolls/images/9/90/Rorikstead.png/revision/latest?cb=20120124084514",
+      "imageUrl": "http://oyster.ignimgs.com/mediawiki/apis.ign.com/the-elder-scrolls-5-skyrim/7/70/Sky_Rorikstead.jpg",
       "directions": [
         {
           "directionName": "North",
@@ -325,7 +325,7 @@
     {
       "name": "Whiterun",
       "description": "You are at Whiterun. Its central location makes it the commercial heart of Skyrim.",
-      "imageUrl": "https://static.wikia.nocookie.net/elderscrolls/images/2/21/Whiterun_Skyrim.png/revision/latest?cb=20141014143530",
+      "imageUrl": "https://i.pinimg.com/originals/bf/ed/58/bfed58d14e664f6f890c950d4c2fa8c4.png",
       "directions": [
         {
           "directionName": "West",
