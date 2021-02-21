@@ -40,8 +40,10 @@ public class SkyrimAdventureService implements AdventureService {
             Map<String, List<String>> commandOptions = new HashMap<>();
             List<String> availableDirectionNames = Location.getAvailableDirectionNames
                     (gameEngine.getPlayer().getCurrentLocation());
-            List<String> availableItemsToTake = Location.getAvailableItemsToTake(gameEngine.getPlayer().getCurrentLocation());
-            List<String> availableItemsToDrop = gameEngine.getPlayer().getAvailableItemsToDrop();
+            List<String> availableItemsToTake = Location.getAvailableItemsToTake
+                    (gameEngine.getPlayer().getCurrentLocation());
+            List<String> availableItemsToDrop = gameEngine.getPlayer()
+                    .getAvailableItemsToDrop();
 
             if (availableDirectionNames.size() > 0) {
                 commandOptions.put("go", availableDirectionNames);
@@ -53,7 +55,6 @@ public class SkyrimAdventureService implements AdventureService {
                 commandOptions.put("drop", availableItemsToDrop);
             }
 
-
             gameStatus = new GameStatus();
             gameStatus.setError(false);
             gameStatus.setId(id);
@@ -62,6 +63,7 @@ public class SkyrimAdventureService implements AdventureService {
             gameStatus.setVideoUrl("");
             gameStatus.setState(new AdventureState());
             gameStatus.setCommandOptions(commandOptions);
+
         } else {
             gameStatus = new GameStatus(true, id, "", "", "", new AdventureState(), new HashMap<>());
         }

@@ -19,7 +19,6 @@ public class AdventureResource {
     @GET
     @Path("ping")
     public String ping() {
-        // TODO: This method should return `pong`.
         return "pong";
     }
 
