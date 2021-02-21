@@ -38,6 +38,7 @@ public class SkyrimAdventureService implements AdventureService {
         if (mapOfGamesRunning.containsKey(id)) {
             GameEngine gameEngine = mapOfGamesRunning.get(id);
             Map<String, List<String>> commandOptions = new HashMap<>();
+
             List<String> availableDirectionNames = Location.getAvailableDirectionNames
                     (gameEngine.getPlayer().getCurrentLocation());
             List<String> availableItemsToTake = Location.getAvailableItemsToTake
@@ -59,7 +60,7 @@ public class SkyrimAdventureService implements AdventureService {
             gameStatus.setError(false);
             gameStatus.setId(id);
             gameStatus.setMessage(gameEngine.getPlayer().getCurrentLocation().getDescription());
-            gameStatus.setImageUrl("");
+            gameStatus.setImageUrl(gameEngine.getPlayer().getCurrentLocation().getImageUrl());
             gameStatus.setVideoUrl("");
             gameStatus.setState(new AdventureState());
             gameStatus.setCommandOptions(commandOptions);

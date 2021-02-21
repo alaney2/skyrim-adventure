@@ -10,6 +10,7 @@ public class Location {
     private String description;
     private List<Direction> directions;
     private List<Item> items;
+    private String imageUrl;
 
     public String getName() {
         return name;
@@ -26,6 +27,8 @@ public class Location {
     public List<Item> getItems() {
         return items;
     }
+
+    public String getImageUrl() { return imageUrl; }
 
     public void removeItem(Item item) {
         items.remove(item);
