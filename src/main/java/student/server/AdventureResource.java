@@ -94,17 +94,6 @@ public class AdventureResource {
         return getGame(id);
     }
 
-//    /**
-//     * The API endpoint to return an ordered mapping of players to "high" scores.
-//     * @return a response with a sorted map of "high" scores
-//     */
-//    @GET
-//    @Path("leaderboard")
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response fetchLeaderboard() {
-//        return Response.ok(service.fetchLeaderboard()).build();
-//    }
-
     /**
      * Helper method to build an `instanceNotFound` error.
      * @param id the instance ID
