@@ -8,6 +8,7 @@ public class Player {
     private Location currentLocation;
     private Location endingLocation;
     private List<Item> inventory;
+    private Map<String, List<String>> commandOptions;
 
     public Player(Location currentLocation, List<Item> inventory) {
         this.currentLocation = currentLocation;
