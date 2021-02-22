@@ -35,6 +35,10 @@ public class Player {
         this.inventory = inventory;
     }
 
+    public Map<String, List<String>> getCommandOptions() {
+        return commandOptions;
+    }
+
     /**
      * Executes a command.
      * @param arguments array of Strings with the first element being the command
