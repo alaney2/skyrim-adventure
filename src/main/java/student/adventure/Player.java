@@ -14,10 +14,6 @@ public class Player {
         this.inventory = inventory;
     }
 
-    public Location getEndingLocation() {
-        return endingLocation;
-    }
-
     public void setEndingLocation(Location endingLocation) {
         this.endingLocation = endingLocation;
     }
@@ -119,7 +115,7 @@ public class Player {
 
         if (!itemDictionary.containsKey(itemName)) {
             System.out.println("There is no item " + "\"" + unformattedItemName + "\" at "
-                    + GameEngine.player.getCurrentLocation().getName() + ".");
+                    + getCurrentLocation().getName() + ".");
         } else {
             inventory.add(itemDictionary.get(itemName));
             currentLocation.removeItem(itemDictionary.get(itemName));

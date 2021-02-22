@@ -1,7 +1,20 @@
 {
-  "startingLocation": "Helgen",
+  "startingLocation": "HelgenStart",
   "endingLocation": "Windhelm",
   "locations": [
+    {
+      "name": "HelgenStart",
+      "description": "Hey, you. You're finally awake. You were trying to cross the border, right?\nWalked right into that Imperial ambush, same as us, and that thief over there.\nWe must escape and travel to Windhelm before we are executed by the Imperials.",
+      "imageUrl": "https://cdn.mos.cms.futurecdn.net/Fg9HQjBE6XoW9uic5StbQ5-1200-80.jpg",
+      "directions": [
+        {
+          "directionName": "Escape",
+          "location": "Helgen"
+        }
+      ],
+      "items": [
+      ]
+    },
     {
       "name": "Helgen",
       "description": "You are at Helgen, a moderately-sized community near Skyrim's South border.",
@@ -165,7 +178,7 @@
     },
     {
       "name": "Windhelm",
-      "description": "Congratulations, you have arrived at Windhelm, the City of Kings.",
+      "description": "Congratulations! You have arrived at Windhelm, the City of Kings.",
       "imageUrl": "https://i.pinimg.com/originals/99/5f/15/995f1503c8cc8913c3534ff8911ff9d1.png",
       "directions": [
         {

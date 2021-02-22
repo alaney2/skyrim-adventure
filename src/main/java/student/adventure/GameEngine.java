@@ -28,6 +28,7 @@ public class GameEngine {
     public GameEngine(Layout layout) {
         locationDictionary = Layout.generateLocationDictionary(layout);
         player = new Player(locationDictionary.get(layout.getStartingLocation()), new ArrayList<>());
+        player.setEndingLocation(locationDictionary.get(layout.getEndingLocation()));
     }
 
     /**
