@@ -99,6 +99,11 @@ public class Player {
             String locationName = directionDictionary.get(directionName).getLocation();
             setCurrentLocation(locationDictionary.get(locationName));
 
+            if (currentLocation.getName().equals(endingLocation.getName())) {
+                inventory = new ArrayList<>();
+                currentLocation.setItems(new ArrayList<>());
+                currentLocation.setDirections(new ArrayList<>());
+            }
             return locationName;
         }
     }

@@ -38,6 +38,14 @@ public class Location {
         items.add(item);
     }
 
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
+
+    public void setDirections(List<Direction> directions) {
+        this.directions = directions;
+    }
+
     /**
      * Creates a map with key being direction name and value being direction object.
      * @param location location of available directions
