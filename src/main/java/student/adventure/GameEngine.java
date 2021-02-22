@@ -10,8 +10,8 @@ import java.util.*;
 
 public class GameEngine {
     public static Layout layout;
-    public static Map<String, Location> locationDictionary;
-    public static Player player;
+    public Map<String, Location> locationDictionary;
+    public Player player;
 
     public Layout getLayout() {
         return layout;
@@ -25,7 +25,8 @@ public class GameEngine {
         return player;
     }
 
-    public GameEngine(Layout layout) {
+    public GameEngine() {
+        loadJson();
         locationDictionary = Layout.generateLocationDictionary(layout);
         player = new Player(locationDictionary.get(layout.getStartingLocation()), new ArrayList<>());
         player.setEndingLocation(locationDictionary.get(layout.getEndingLocation()));
@@ -33,10 +34,8 @@ public class GameEngine {
 
     /**
      * Method that starts running the game.
-     * @throws FileNotFoundException If JSON doesn't exist.
      */
-    public static void runGame() throws FileNotFoundException {
-        loadJson();
+    public void runGame() {
         checkJsonForNull();
         printGameIntro();
 
@@ -62,25 +61,28 @@ public class GameEngine {
     /**
      * Creates an instance of player starting at starting location with nothing in inventory.
      */
-    public static void createPlayer() {
+    public void createPlayer() {
         player = new Player(locationDictionary.get(layout.getStartingLocation()), new ArrayList<>());
     }
 
     /**
      * Creates a location dictionary which maps name of location to its location object.
      */
-    public static void createLocationDictionary() {
+    public void createLocationDictionary() {
         locationDictionary = Layout.generateLocationDictionary(layout);
     }
 
     /**
      * Loads JSON into existence.
-     * @throws FileNotFoundException If JSON doesn't exist.
      */
-    public static void loadJson() throws FileNotFoundException {
+    public static void loadJson() {
         Gson gson = new Gson();
-        Reader reader = new FileReader("src/main/resources/skyrim.json");
-        layout = gson.fromJson(reader, Layout.class);
+        try {
+            Reader reader = new FileReader("src/main/resources/skyrim.json");
+            layout = gson.fromJson(reader, Layout.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**

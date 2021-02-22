@@ -20,11 +20,10 @@ public class SkyrimAdventureService implements AdventureService {
 
     @Override
     public int newGame() {
+        GameEngine gameEngine = new GameEngine();
         try {
-            GameEngine.loadJson();
-            GameEngine gameEngine = new GameEngine(GameEngine.layout);
             mapOfGamesRunning.put(id, gameEngine);
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return id++;

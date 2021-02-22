@@ -50,7 +50,7 @@ public class Player {
                 break;
 
             case "examine":
-                System.out.println(Message.getDefaultInfo(GameEngine.player));
+//                System.out.println(Message.getDefaultInfo(GameEngine.player));
                 break;
 
             case "take":
@@ -70,7 +70,7 @@ public class Player {
                 break;
 
             case "inventory":
-                System.out.println(getStringOfItemsInInventory(GameEngine.player));
+//                System.out.println(getStringOfItemsInInventory(GameEngine.getPlayer()));
                 break;
 
             default:

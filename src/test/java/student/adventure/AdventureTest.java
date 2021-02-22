@@ -38,9 +38,9 @@ public class AdventureTest {
         layout = gson.fromJson(reader, Layout.class);
         locationDictionary = Layout.generateLocationDictionary(layout);
         player = new Player(locationDictionary.get(layout.getStartingLocation()), new ArrayList<>());
-        GameEngine.loadJson();
-        GameEngine.createLocationDictionary();
-        GameEngine.createPlayer();
+//        GameEngine.loadJson();
+//        GameEngine.createLocationDictionary();
+//        GameEngine.createPlayer();
     }
 
     @Before
