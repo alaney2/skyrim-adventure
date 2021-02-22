@@ -83,7 +83,7 @@ public class Player {
      * @param directionName direction to move in
      */
     public String goDirection(String directionName) {
-        Map<String, Location> locationDictionary = Layout.generateLocationDictionary(GameEngine.layout);
+        Map<String, Location> locationDictionary = Layout.generateLocationDictionary(GameEngine.getLayout());
         Map<String, Direction> directionDictionary = Location.generateDirectionDictionary(currentLocation);
         directionName = UserInput.capitalizeFirstLetter(directionName);
 

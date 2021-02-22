@@ -9,11 +9,11 @@ import java.util.*;
 
 
 public class GameEngine {
-    public static Layout layout;
+    private static Layout layout;
     public Map<String, Location> locationDictionary;
     public Player player;
 
-    public Layout getLayout() {
+    public static Layout getLayout() {
         return layout;
     }
 
