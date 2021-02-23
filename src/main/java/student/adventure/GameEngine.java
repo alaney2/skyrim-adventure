@@ -11,7 +11,7 @@ import java.util.*;
 
 public class GameEngine {
     private static Layout layout;
-    public Map<String, Location> locationDictionary;
+    public static Map<String, Location> locationDictionary;
     public Player player;
     public GameStatus gameStatus;
 

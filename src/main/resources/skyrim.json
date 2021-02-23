@@ -10,15 +10,61 @@
       "directions": [
         {
           "directionName": "Escape",
+          "location": "ChooseSides"
+        }
+      ],
+      "items": []
+    },
+    {
+      "name": "ChooseSides",
+      "description": "We made it out! By the way, are you a Stormcloak or are you from the Imperial Legion?\nYou will either travel to Windhelm or Solitude.",
+      "imageUrl": "https://i.redd.it/qyu9op6reot21.jpg",
+      "directions": [
+        {
+          "directionName": "Stormcloak",
+          "location": "Helgen"
+        },
+        {
+          "directionName": "Imperial Soldier",
           "location": "Helgen"
         }
       ],
+      "items": []
+    },
+    {
+      "name": "HelgenRalofExecuted",
+      "description": "You have slain Ralof because he was a Stormcloak. You are now at Helgen, a moderately-sized community near Skyrim's South border.",
+      "imageUrl": "https://i.pinimg.com/originals/d9/99/72/d99972b00cf204ce6c26257991f092d8.jpg",
+      "directions": [
+        {
+          "directionName": "North",
+          "location": "Riverwood"
+        },
+        {
+          "directionName": "East",
+          "location": "Ivarstead"
+        },
+        {
+          "directionName": "South",
+          "location": "SkyrimShuffle"
+        },
+        {
+          "directionName": "West",
+          "location": "Falkreath"
+        }
+      ],
       "items": [
+        {
+          "itemName": "Sword"
+        },
+        {
+          "itemName" : "WoodenDoor"
+        }
       ]
     },
     {
       "name": "Helgen",
-      "description": "You are at Helgen, a moderately-sized community near Skyrim's South border.",
+      "description": "You travel with Ralof to Helgen, a moderately-sized community near Skyrim's South border.",
       "imageUrl": "https://i.pinimg.com/originals/d9/99/72/d99972b00cf204ce6c26257991f092d8.jpg",
       "directions": [
         {

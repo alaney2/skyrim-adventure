@@ -1,9 +1,6 @@
 package student.adventure;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Player {
     private Location currentLocation;
@@ -79,6 +76,13 @@ public class Player {
                 System.out.println(getStringOfItemsInInventory());
                 break;
 
+            case "stormcloak":
+                currentLocation = GameEngine.locationDictionary.get("Helgen");
+                break;
+
+            case "imperial":
+                currentLocation = GameEngine.locationDictionary.get("HelgenRalofExecuted");
+                break;
             default:
                 System.out.println("Game should not reach this point!");
         }
@@ -215,7 +219,12 @@ public class Player {
         List<String> availableItemsToTake = currentLocation.getAvailableItemsToTake();
         List<String> availableItemsToDrop = getAvailableItemsToDrop();
 
-        if (availableDirectionNames.size() > 0) {
+        if (currentLocation.getName().equals("ChooseSides")) {
+            commandOptions.put("Imperial", new ArrayList<>(Arrays.asList("")));
+            commandOptions.put("Stormcloak", new ArrayList<>(Arrays.asList("")));
+        }
+
+        if (availableDirectionNames.size() > 0 && !currentLocation.getName().equals("ChooseSides")) {
             commandOptions.put("go", availableDirectionNames);
         }
         if (availableItemsToTake.size() > 0) {
