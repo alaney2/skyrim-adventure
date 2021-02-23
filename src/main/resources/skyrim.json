@@ -243,7 +243,7 @@
     },
     {
       "name": "Windhelm",
-      "description": "Congratulations! You have arrived at Windhelm, the City of Kings.",
+      "description": "You have arrived at Windhelm, the City of Kings.",
       "imageUrl": "https://i.pinimg.com/originals/99/5f/15/995f1503c8cc8913c3534ff8911ff9d1.png",
       "directions": [
         {
