@@ -1,6 +1,7 @@
 package student.adventure;
 
 import com.google.gson.Gson;
+import student.server.AdventureState;
 import student.server.GameStatus;
 
 import java.io.FileReader;
@@ -20,6 +21,10 @@ public class GameEngine {
 
     public Player getPlayer() {
         return player;
+    }
+
+    public GameStatus getGameStatus() {
+        return gameStatus;
     }
 
     public GameEngine() {
@@ -79,6 +84,16 @@ public class GameEngine {
         locationDictionary = Layout.generateLocationDictionary(layout);
     }
 
+    public void createGameStatus() {
+        player.generateCommandOptions();
+
+        gameStatus.setError(false);
+        gameStatus.setMessage(player.getCurrentLocation().getDescription());
+        gameStatus.setImageUrl(player.getCurrentLocation().getImageUrl());
+        gameStatus.setVideoUrl(layout.getVideoUrl());
+        gameStatus.setState(new AdventureState());
+        gameStatus.setCommandOptions(player.getCommandOptions());
+    }
 
     /**
      * Checks if anything in the Json file is null and throws NullPointerException() if there is

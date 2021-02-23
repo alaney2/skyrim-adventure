@@ -37,20 +37,12 @@ public class SkyrimAdventureService implements AdventureService {
     @Override
     public GameStatus getGame(int id) {
         GameStatus gameStatus;
-
         if (mapOfGamesRunning.containsKey(id)) {
             GameEngine gameEngine = mapOfGamesRunning.get(id);
-            Map<String, List<String>> commandOptions = new HashMap<>();
+            gameEngine.createGameStatus();
 
-            gameStatus = new GameStatus();
-            gameStatus.setError(false);
+            gameStatus = gameEngine.getGameStatus();
             gameStatus.setId(id);
-            gameStatus.setMessage(gameEngine.getPlayer().getCurrentLocation().getDescription());
-            gameStatus.setImageUrl(gameEngine.getPlayer().getCurrentLocation().getImageUrl());
-            gameStatus.setVideoUrl(GameEngine.getLayout().getVideoUrl());
-            gameStatus.setState(new AdventureState());
-            gameStatus.setCommandOptions(commandOptions);
-
         } else {
             gameStatus = new GameStatus(true, id, "", "", "", new AdventureState(), new HashMap<>());
         }
