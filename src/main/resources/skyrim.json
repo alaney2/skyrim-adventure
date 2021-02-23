@@ -25,8 +25,8 @@
           "location": "Helgen"
         },
         {
-          "directionName": "Imperial Soldier",
-          "location": "Helgen"
+          "directionName": "Imperial",
+          "location": "HelgenRalofExecuted"
         }
       ],
       "items": []
