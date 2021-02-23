@@ -60,9 +60,9 @@ public class Location {
         return directionDictionary;
     }
 
-    public static List<String> getAvailableDirectionNames(Location location) {
+    public List<String> getAvailableDirectionNames() {
         List<String> availableDirectionNames = new ArrayList<>();
-        for (Direction direction: location.getDirections()) {
+        for (Direction direction: directions) {
             availableDirectionNames.add(direction.getDirectionName());
         }
         return availableDirectionNames;
@@ -82,9 +82,10 @@ public class Location {
         return itemDictionary;
     }
 
-    public static List<String> getAvailableItemsToTake(Location location) {
+
+    public List<String> getAvailableItemsToTake() {
         List<String> availableItems = new ArrayList<>();
-        for (Item item: location.getItems()) {
+        for (Item item: items) {
             availableItems.add(item.getItemName());
         }
         return availableItems;

@@ -42,23 +42,6 @@ public class SkyrimAdventureService implements AdventureService {
             GameEngine gameEngine = mapOfGamesRunning.get(id);
             Map<String, List<String>> commandOptions = new HashMap<>();
 
-            List<String> availableDirectionNames = Location.getAvailableDirectionNames
-                    (gameEngine.getPlayer().getCurrentLocation());
-            List<String> availableItemsToTake = Location.getAvailableItemsToTake
-                    (gameEngine.getPlayer().getCurrentLocation());
-            List<String> availableItemsToDrop = gameEngine.getPlayer()
-                    .getAvailableItemsToDrop();
-
-            if (availableDirectionNames.size() > 0) {
-                commandOptions.put("go", availableDirectionNames);
-            }
-            if (availableItemsToTake.size() > 0) {
-                commandOptions.put("take", availableItemsToTake);
-            }
-            if (availableItemsToDrop.size() > 0) {
-                commandOptions.put("drop", availableItemsToDrop);
-            }
-
             gameStatus = new GameStatus();
             gameStatus.setError(false);
             gameStatus.setId(id);

@@ -211,4 +211,20 @@ public class Player {
         String itemsVisible = "Items visible: " + Location.getStringOfAvailableItems(currentLocation);
         return getDescription + "\n" + availableDirections + "\n" + itemsVisible;
     }
+
+    public void generateCommandOptions() {
+        List<String> availableDirectionNames = currentLocation.getAvailableDirectionNames();
+        List<String> availableItemsToTake = currentLocation.getAvailableItemsToTake();
+        List<String> availableItemsToDrop = getAvailableItemsToDrop();
+
+        if (availableDirectionNames.size() > 0) {
+            commandOptions.put("go", availableDirectionNames);
+        }
+        if (availableItemsToTake.size() > 0) {
+            commandOptions.put("take", availableItemsToTake);
+        }
+        if (availableItemsToDrop.size() > 0) {
+            commandOptions.put("drop", availableItemsToDrop);
+        }
+    }
 }
