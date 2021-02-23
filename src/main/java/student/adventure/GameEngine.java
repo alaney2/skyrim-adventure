@@ -1,6 +1,7 @@
 package student.adventure;
 
 import com.google.gson.Gson;
+import student.server.GameStatus;
 
 import java.io.FileReader;
 import java.io.Reader;
@@ -11,13 +12,10 @@ public class GameEngine {
     private static Layout layout;
     public Map<String, Location> locationDictionary;
     public Player player;
+    public GameStatus gameStatus;
 
     public static Layout getLayout() {
         return layout;
-    }
-
-    public Map<String, Location> getLocationDictionary() {
-        return locationDictionary;
     }
 
     public Player getPlayer() {
@@ -35,7 +33,7 @@ public class GameEngine {
      */
     public void runGame() {
         checkJsonForNull();
-        printGameIntro();
+        Message.printGameIntro();
 
         System.out.println(player.getCurrentLocationInfo());
 
@@ -46,11 +44,24 @@ public class GameEngine {
             player.executeCommand(arguments);
 
             if (player.hasReachedEndingLocation()) {
-                printGameEnding();
+                Message.printGameEnding();
                 return;
             }
         }
         while (!command.equals("quit") && !command.equals("exit"));
+    }
+
+    /**
+     * Loads JSON into existence.
+     */
+    public static void loadJson() {
+        Gson gson = new Gson();
+        try {
+            Reader reader = new FileReader("src/main/resources/skyrim.json");
+            layout = gson.fromJson(reader, Layout.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -68,49 +79,6 @@ public class GameEngine {
         locationDictionary = Layout.generateLocationDictionary(layout);
     }
 
-    /**
-     * Loads JSON into existence.
-     */
-    public static void loadJson() {
-        Gson gson = new Gson();
-        try {
-            Reader reader = new FileReader("src/main/resources/skyrim.json");
-            layout = gson.fromJson(reader, Layout.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Prints the dialogue at the start of the game.
-     */
-    public static void printGameIntro() {
-        System.out.println("Ralof: Hey, you. You’re finally awake. You were trying to cross the border, right?\n" +
-                "Walked right into that Imperial ambush, same as us, and that thief over there.");
-        System.out.println();
-
-        System.out.println("Lokir: Damn you Stormcloaks. Skyrim was fine until you came along. Empire was nice and lazy.\n" +
-                "If they hadn't been looking for you, I could’ve stolen that horse and been half way to Hammerfell.\n" +
-                "You there. You and me — we should be here. It’s these Stormcloaks the Empire wants.");
-        System.out.println();
-    }
-
-//    /**
-//     * Prints current location's description, available directions, and items visible.
-//     */
-//    public static void printDefaultInfo() {
-//        System.out.println(player.getCurrentLocation().getDescription());
-//        System.out.println("From here, you can go: "
-//                + Location.getFormattedStringOfAvailableDirections(player.getCurrentLocation()));
-//        System.out.println("Items visible: " + Location.getStringOfAvailableItems(player.getCurrentLocation()));
-//    }
-
-    /**
-     * Prints what happens when the game ends.
-     */
-    public static void printGameEnding() {
-        System.out.println("You've made it to Windhelm; you win?");
-    }
 
     /**
      * Checks if anything in the Json file is null and throws NullPointerException() if there is
