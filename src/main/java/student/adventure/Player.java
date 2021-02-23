@@ -19,6 +19,10 @@ public class Player {
         this.endingLocation = endingLocation;
     }
 
+    public Location getEndingLocation() {
+        return endingLocation;
+    }
+
     public Location getCurrentLocation() {
         return currentLocation;
     }
@@ -55,7 +59,7 @@ public class Player {
                 break;
 
             case "examine":
-//                System.out.println(Message.getDefaultInfo(GameEngine.player));
+                System.out.println(getCurrentLocationInfo());
                 break;
 
             case "take":
@@ -202,5 +206,12 @@ public class Player {
             availableItems.add(item.getItemName());
         }
         return availableItems;
+    }
+
+    public String getCurrentLocationInfo() {
+        String getDescription = currentLocation.getDescription();
+        String availableDirections = "You can go: " + Location.getFormattedStringOfAvailableDirections(currentLocation);
+        String itemsVisible = "Items visible: " + Location.getStringOfAvailableItems(currentLocation);
+        return getDescription + "\n" + availableDirections + "\n" + itemsVisible;
     }
 }
