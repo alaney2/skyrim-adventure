@@ -215,7 +215,7 @@ public class Player {
      */
     public String getCurrentLocationInfo() {
         String getDescription = currentLocation.getDescription();
-        String availableDirections = "You can go: " + Location.getFormattedStringOfAvailableDirections(currentLocation);
+        String availableDirections = "From here, you can go: " + Location.getFormattedStringOfAvailableDirections(currentLocation);
         String itemsVisible = "Items visible: " + Location.getStringOfAvailableItems(currentLocation);
         return getDescription + "\n" + availableDirections + "\n" + itemsVisible;
     }

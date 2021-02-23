@@ -69,12 +69,14 @@ public class AdventureTest {
 
     @Test
     public void goNorth() {
+        player.setCurrentLocation(locationDictionary.get("Helgen"));
         player.goDirection("North");
         assertEquals("Riverwood", player.getCurrentLocation().getName());
     }
 
     @Test
     public void goNorthWithExtraneousCommands() {
+        player.setCurrentLocation(locationDictionary.get("Helgen"));
         player.executeCommand(new String[] {"go", "north", "south", "east", "west"});
         assertEquals("Riverwood", player.getCurrentLocation().getName());
     }
@@ -89,13 +91,14 @@ public class AdventureTest {
     @Test
     public void goNullDirection() {
         player.executeCommand(new String[] {"go", null});
-        assertEquals("Helgen", player.getCurrentLocation().getName());
+        assertEquals("HelgenStart", player.getCurrentLocation().getName());
     }
 
     @Test
     public void goEastCaseInsensitive() {
+        player.setCurrentLocation(locationDictionary.get("Helgen"));
         player.goDirection("eAsT");
-        assertEquals("Falkreath", player.getCurrentLocation().getName());
+        assertEquals("Ivarstead", player.getCurrentLocation().getName());
     }
 
     @Test
@@ -108,28 +111,31 @@ public class AdventureTest {
     // Testing "examine" command.
     @Test
     public void examine() {
+        player.setCurrentLocation(locationDictionary.get("Helgen"));
         player.executeCommand(new String[] {"examine"});
-        String output = "You are at Helgen, a moderately-sized community near Skyrim's South border.\n" +
-                "From here, you can go: East, North, or West\n" +
-                "Items visible: sword, GlassDoor\n";
+        String output = "You travel with Ralof to Helgen, a moderately-sized community near Skyrim's South border.\n" +
+                "From here, you can go: North, East, South, or West\n" +
+                "Items visible: Sword, WoodenDoor\n";
         assertEquals(output, outContent.toString());
     }
 
     @Test
     public void examineCaseInsensitive() {
+        player.setCurrentLocation(locationDictionary.get("Helgen"));
         player.executeCommand(new String[] {"ExAmInE"});
-        String output = "You are at Helgen, a moderately-sized community near Skyrim's South border.\n" +
-                "From here, you can go: East, North, or West\n" +
-                "Items visible: sword, GlassDoor\n";
+        String output = "You travel with Ralof to Helgen, a moderately-sized community near Skyrim's South border.\n" +
+                "From here, you can go: North, East, South, or West\n" +
+                "Items visible: Sword, WoodenDoor\n";
         assertEquals(output, outContent.toString());
     }
 
     @Test
     public void examineWithExtraneousCommands() {
+        player.setCurrentLocation(locationDictionary.get("Helgen"));
         player.executeCommand(new String[] {"examine", "go", "random"});
-        String output = "You are at Helgen, a moderately-sized community near Skyrim's South border.\n" +
-                "From here, you can go: East, North, or West\n" +
-                "Items visible: sword, GlassDoor\n";
+        String output = "You travel with Ralof to Helgen, a moderately-sized community near Skyrim's South border.\n" +
+                "From here, you can go: North, East, South, or West\n" +
+                "Items visible: Sword, WoodenDoor\n";
         assertEquals(output, outContent.toString());
     }
 
@@ -137,8 +143,9 @@ public class AdventureTest {
 
     @Test
     public void takeItem() {
+        player.setCurrentLocation(locationDictionary.get("Helgen"));
         player.takeItem("sword");
-        assertEquals("sword", player.getInventory().get(0).getItemName());
+        assertEquals("Sword", player.getInventory().get(0).getItemName());
     }
 
     @Test
@@ -149,8 +156,9 @@ public class AdventureTest {
 
     @Test
     public void takeItemCaseInsensitive() {
+        player.setCurrentLocation(locationDictionary.get("Helgen"));
         player.takeItem("sWoRd");
-        assertEquals("sword", player.getInventory().get(0).getItemName());
+        assertEquals("Sword", player.getInventory().get(0).getItemName());
     }
 
     @Test
@@ -162,6 +170,7 @@ public class AdventureTest {
 
     @Test
     public void takeValidItemOutputMessage() {
+        player.setCurrentLocation(locationDictionary.get("Helgen"));
         player.takeItem("sword");
         String output = "Item \"sword\" taken.\n";
         assertEquals(output, outContent.toString());
@@ -170,17 +179,18 @@ public class AdventureTest {
     @Test
     public void takeInvalidItemOutputMessage() {
         player.takeItem("hay");
-        String output = "There is no item \"hay\" at Helgen.\n";
+        String output = "There is no item \"hay\" at HelgenStart.\n";
         assertEquals(output, outContent.toString());
     }
 
     @Test
     public void takeTwoOfTheSameItems() {
+        player.setCurrentLocation(locationDictionary.get("Helgen"));
         player.getCurrentLocation().addItem(new Item("sword"));
         player.takeItem("sword");
         player.takeItem("sword");
         assert(player.getInventory().get(0).getItemName().equals("sword"));
-        assert(player.getInventory().get(1).getItemName().equals("sword"));
+        assert(player.getInventory().get(1).getItemName().equals("Sword"));
     }
 
     @Test
@@ -192,12 +202,13 @@ public class AdventureTest {
 
     @Test
     public void dropItem() {
+        player.setCurrentLocation(locationDictionary.get("Helgen"));
         List<Item> inventory = new ArrayList<>();
         inventory.add(new Item("sword"));
         player.setInventory(inventory);
         player.dropItem("sword");
-        assert(player.getCurrentLocation().getItems().get(0).getItemName().equals("sword"));
-        assert(player.getCurrentLocation().getItems().get(1).getItemName().equals("GlassDoor"));
+        assert(player.getCurrentLocation().getItems().get(0).getItemName().equals("Sword"));
+        assert(player.getCurrentLocation().getItems().get(1).getItemName().equals("WoodenDoor"));
         assert(player.getCurrentLocation().getItems().get(2).getItemName().equals("sword"));
     }
 
@@ -213,9 +224,10 @@ public class AdventureTest {
 
     @Test
     public void dropInvalidItem() {
+        player.setCurrentLocation(locationDictionary.get("Helgen"));
         player.dropItem("nothing");
-        assert(player.getCurrentLocation().getItems().get(0).getItemName().equals("sword"));
-        assert(player.getCurrentLocation().getItems().get(1).getItemName().equals("GlassDoor"));
+        assert(player.getCurrentLocation().getItems().get(0).getItemName().equals("Sword"));
+        assert(player.getCurrentLocation().getItems().get(1).getItemName().equals("WoodenDoor"));
     }
 
     @Test
@@ -232,9 +244,10 @@ public class AdventureTest {
 
     @Test
     public void dropItemWithoutArgument() {
+        player.setCurrentLocation(locationDictionary.get("Helgen"));
         player.executeCommand(new String[] {"drop"});
-        assert(player.getCurrentLocation().getItems().get(0).getItemName().equals("sword"));
-        assert(player.getCurrentLocation().getItems().get(1).getItemName().equals("GlassDoor"));
+        assert(player.getCurrentLocation().getItems().get(0).getItemName().equals("Sword"));
+        assert(player.getCurrentLocation().getItems().get(1).getItemName().equals("WoodenDoor"));
     }
 
     @Test
@@ -246,6 +259,7 @@ public class AdventureTest {
 
     @Test
     public void dropTwoOfTheSameItems() {
+        player.setCurrentLocation(locationDictionary.get("Helgen"));
         List<Item> inventory = new ArrayList<>(Arrays.asList(new Item("boots"), new Item("boots")));
         player.setInventory(inventory);
         player.dropItem("boots");
@@ -257,21 +271,21 @@ public class AdventureTest {
     @Test
     public void inspectEmptyInventory() {
         player.executeCommand(new String[] {"inventory"});
-        String output = "You have nothing in your inventory!\n";
+        String output = "\n";
         assertEquals(output, outContent.toString());
     }
 
     @Test
     public void inspectEmptyInventoryCaseInsensitive() {
         player.executeCommand(new String[] {"InVeNToRY"});
-        String output = "You have nothing in your inventory!\n";
+        String output = "\n";
         assertEquals(output, outContent.toString());
     }
 
     @Test
     public void inspectEmptyInventoryWithExtraneousCommands() {
         player.executeCommand(new String[] {"inventory", "go", "drop"});
-        String output = "You have nothing in your inventory!\n";
+        String output = "\n";
         assertEquals(output, outContent.toString());
     }
 }
