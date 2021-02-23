@@ -79,7 +79,7 @@ public class Player {
                 break;
 
             case "inventory":
-//                System.out.println(getStringOfItemsInInventory(GameEngine.getPlayer()));
+                System.out.println(getStringOfItemsInInventory());
                 break;
 
             default:
@@ -168,11 +168,10 @@ public class Player {
 
     /**
      * Creates a formatted string of items in the player's inventory.
-     * @param player instance of player
      * @return a formatted string of items in inventory
      */
-    public static String getStringOfItemsInInventory(Player player) {
-        final int NUMBER_OF_ITEMS = player.getInventory().size();
+    public String getStringOfItemsInInventory() {
+        final int NUMBER_OF_ITEMS = inventory.size();
 
         String itemsInInventory = "You have";
         switch (NUMBER_OF_ITEMS) {
@@ -183,16 +182,16 @@ public class Player {
             case 1:
                 itemsInInventory += ": ";
 
-                return itemsInInventory + player.getInventory().get(0).getItemName();
+                return itemsInInventory + inventory.get(0).getItemName();
 
             default:
                 itemsInInventory += ": ";
                 StringBuilder inventoryBuilder = new StringBuilder();
                 for (int i = 0; i < NUMBER_OF_ITEMS - 1; i++) {
-                    inventoryBuilder.append(player.getInventory().get(i).getItemName());
+                    inventoryBuilder.append(inventory.get(i).getItemName());
                     inventoryBuilder.append(", ");
                 }
-                inventoryBuilder.append(player.getInventory().get(player.getInventory().size() - 1).getItemName());
+                inventoryBuilder.append(inventory.get(inventory.size() - 1).getItemName());
 
                 return itemsInInventory + inventoryBuilder.toString();
         }
