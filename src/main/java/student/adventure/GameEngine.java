@@ -28,8 +28,6 @@ public class GameEngine {
         loadJson();
         createLocationDictionary();
         createPlayer();
-        player.setEndingLocation(locationDictionary.get(layout.getEndingLocation()));
-        System.out.println(player.getEndingLocation().getName());
     }
 
     /**
@@ -60,6 +58,7 @@ public class GameEngine {
      */
     public void createPlayer() {
         player = new Player(locationDictionary.get(layout.getStartingLocation()), new ArrayList<>());
+        player.setEndingLocation(locationDictionary.get(layout.getEndingLocation()));
     }
 
     /**

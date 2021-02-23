@@ -91,15 +91,13 @@ public class Player {
      * Move the player a certain direction from their current location.
      * @param directionName direction to move in
      */
-    public String goDirection(String directionName) {
+    public void goDirection(String directionName) {
         Map<String, Location> locationDictionary = Layout.generateLocationDictionary(GameEngine.getLayout());
         Map<String, Direction> directionDictionary = Location.generateDirectionDictionary(currentLocation);
         directionName = UserInput.capitalizeFirstLetter(directionName);
 
         if (!directionDictionary.containsKey(directionName)) {
             System.out.println("You can't go " + "\"" + directionName + "\"!");
-
-            return "You can't go " + "\"" + directionName + "\"!";
         } else {
             String locationName = directionDictionary.get(directionName).getLocation();
             setCurrentLocation(locationDictionary.get(locationName));
@@ -109,7 +107,8 @@ public class Player {
                 currentLocation.setItems(new ArrayList<>());
                 currentLocation.setDirections(new ArrayList<>());
             }
-            return locationName;
+
+            System.out.println(getCurrentLocationInfo());
         }
     }
 
