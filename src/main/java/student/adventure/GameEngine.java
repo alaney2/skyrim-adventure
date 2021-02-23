@@ -93,7 +93,7 @@ public class GameEngine {
         gameStatus.setMessage(player.getCurrentLocation().getDescription());
         gameStatus.setImageUrl(player.getCurrentLocation().getImageUrl());
         gameStatus.setVideoUrl(layout.getVideoUrl());
-        gameStatus.setState(new AdventureState());
+        gameStatus.setState(new AdventureState(player.getStringOfItemsInInventory()));
         gameStatus.setCommandOptions(player.getCommandOptions());
     }
 

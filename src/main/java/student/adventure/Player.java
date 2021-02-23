@@ -82,6 +82,7 @@ public class Player {
 
             case "imperial":
                 currentLocation = GameEngine.locationDictionary.get("HelgenRalofExecuted");
+                endingLocation = GameEngine.locationDictionary.get("Solitude");
                 break;
             default:
                 System.out.println("Game should not reach this point!");
@@ -174,19 +175,17 @@ public class Player {
     public String getStringOfItemsInInventory() {
         final int NUMBER_OF_ITEMS = inventory.size();
 
-        String itemsInInventory = "You have";
+        String itemsInInventory = "";
         switch (NUMBER_OF_ITEMS) {
             case 0:
 
-                return itemsInInventory + " nothing in your inventory!";
+                return itemsInInventory;
 
             case 1:
-                itemsInInventory += ": ";
 
                 return itemsInInventory + inventory.get(0).getItemName();
 
             default:
-                itemsInInventory += ": ";
                 StringBuilder inventoryBuilder = new StringBuilder();
                 for (int i = 0; i < NUMBER_OF_ITEMS - 1; i++) {
                     inventoryBuilder.append(inventory.get(i).getItemName());
