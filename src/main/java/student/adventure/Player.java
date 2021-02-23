@@ -159,12 +159,11 @@ public class Player {
 
     /**
      * Checks if player has reached the ending location.
-     * @param player instance of Player
      * @return whether the player has reached the ending location
      */
-    public static boolean playerHasReachedEndingLocation(Player player) {
+    public boolean hasReachedEndingLocation() {
 
-        return player.getCurrentLocation().getName().equals("Windhelm");
+        return currentLocation.getName().equals(endingLocation.getName());
     }
 
     /**

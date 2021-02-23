@@ -45,7 +45,7 @@ public class GameEngine {
             command = arguments[0].toLowerCase();
             player.executeCommand(arguments);
 
-            if (Player.playerHasReachedEndingLocation(player)) {
+            if (player.hasReachedEndingLocation()) {
                 printGameEnding();
                 return;
             }
