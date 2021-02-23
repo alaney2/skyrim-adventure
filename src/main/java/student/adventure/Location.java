@@ -61,8 +61,8 @@ public class Location {
     }
 
     /**
-     *
-     * @return
+     * Creates a list of direction names the player can go to.
+     * @return list of String direction names
      */
     public List<String> getAvailableDirectionNames() {
         List<String> availableDirectionNames = new ArrayList<>();
@@ -87,8 +87,8 @@ public class Location {
     }
 
     /**
-     *
-     * @return
+     * Creates a list of item names in the current location.
+     * @return list of String item names
      */
     public List<String> getAvailableItemsToTake() {
         List<String> availableItems = new ArrayList<>();
@@ -132,7 +132,7 @@ public class Location {
     /**
      * Creates a string of available items in the current location.
      * @param location location to get items from
-     * @return string of item names
+     * @return String of item names
      */
     public static String getStringOfAvailableItems(Location location) {
         final int NUMBER_OF_ITEMS = location.getItems().size();

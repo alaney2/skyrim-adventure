@@ -10,13 +10,13 @@
       "directions": [
         {
           "directionName": "Escape",
-          "location": "ChooseSides"
+          "location": "HelgenOutskirts"
         }
       ],
       "items": []
     },
     {
-      "name": "ChooseSides",
+      "name": "HelgenOutskirts",
       "description": "We made it out! By the way, are you a Stormcloak or are you from the Imperial Legion?\nYou will either travel to Windhelm or Solitude.",
       "imageUrl": "https://i.redd.it/qyu9op6reot21.jpg",
       "directions": [
@@ -26,13 +26,13 @@
         },
         {
           "directionName": "Imperial",
-          "location": "HelgenRalofExecuted"
+          "location": "BloodyHelgen"
         }
       ],
       "items": []
     },
     {
-      "name": "HelgenRalofExecuted",
+      "name": "BloodyHelgen",
       "description": "You have slain Ralof because he was a Stormcloak. You are now at Helgen, a moderately-sized community near Skyrim's South border.",
       "imageUrl": "https://i.pinimg.com/originals/d9/99/72/d99972b00cf204ce6c26257991f092d8.jpg",
       "directions": [

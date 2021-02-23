@@ -81,7 +81,7 @@ public class Player {
                 break;
 
             case "imperial":
-                currentLocation = GameEngine.getLocationDictionary().get("HelgenRalofExecuted");
+                currentLocation = GameEngine.getLocationDictionary().get("BloodyHelgen");
                 endingLocation = GameEngine.getLocationDictionary().get("Solitude");
                 break;
             default:
@@ -230,8 +230,10 @@ public class Player {
         List<String> availableItemsToDrop = getAvailableItemsToDrop();
 
         if (currentLocation.getName().equals("ChooseSides")) {
-            commandOptions.put("Imperial", new ArrayList<>(Arrays.asList("")));
-            commandOptions.put("Stormcloak", new ArrayList<>(Arrays.asList("")));
+            List<String> blankList = new ArrayList<>();
+            blankList.add("");
+            commandOptions.put("Imperial", blankList);
+            commandOptions.put("Stormcloak", blankList);
         }
 
         if (availableDirectionNames.size() > 0 && !currentLocation.getName().equals("ChooseSides")) {
