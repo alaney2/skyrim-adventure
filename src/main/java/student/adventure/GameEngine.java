@@ -13,7 +13,7 @@ public class GameEngine {
     private static Layout layout;
     public Map<String, Location> locationDictionary;
     public Player player;
-    public GameStatus gameStatus;
+    public GameStatus gameStatus = new GameStatus();
 
     public static Layout getLayout() {
         return layout;
@@ -31,6 +31,7 @@ public class GameEngine {
         loadJson();
         createLocationDictionary();
         createPlayer();
+        createGameStatus();
     }
 
     /**

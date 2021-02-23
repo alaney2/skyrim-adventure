@@ -1,6 +1,7 @@
 package student.adventure;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -8,7 +9,7 @@ public class Player {
     private Location currentLocation;
     private Location endingLocation;
     private List<Item> inventory;
-    private Map<String, List<String>> commandOptions;
+    private Map<String, List<String>> commandOptions = new HashMap<>();
 
     public Player(Location currentLocation, List<Item> inventory) {
         this.currentLocation = currentLocation;
