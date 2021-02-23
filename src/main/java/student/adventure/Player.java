@@ -9,7 +9,7 @@ public class Player {
     private Location currentLocation;
     private Location endingLocation;
     private List<Item> inventory;
-    private Map<String, List<String>> commandOptions = new HashMap<>();
+    private Map<String, List<String>> commandOptions;
 
     public Player(Location currentLocation, List<Item> inventory) {
         this.currentLocation = currentLocation;
@@ -18,10 +18,6 @@ public class Player {
 
     public void setEndingLocation(Location endingLocation) {
         this.endingLocation = endingLocation;
-    }
-
-    public Location getEndingLocation() {
-        return endingLocation;
     }
 
     public Location getCurrentLocation() {
@@ -214,6 +210,7 @@ public class Player {
     }
 
     public void generateCommandOptions() {
+        commandOptions = new HashMap<>();
         List<String> availableDirectionNames = currentLocation.getAvailableDirectionNames();
         List<String> availableItemsToTake = currentLocation.getAvailableItemsToTake();
         List<String> availableItemsToDrop = getAvailableItemsToDrop();

@@ -13,7 +13,7 @@ public class GameEngine {
     private static Layout layout;
     public Map<String, Location> locationDictionary;
     public Player player;
-    public GameStatus gameStatus = new GameStatus();
+    public GameStatus gameStatus;
 
     public static Layout getLayout() {
         return layout;
@@ -86,6 +86,7 @@ public class GameEngine {
     }
 
     public void createGameStatus() {
+        gameStatus = new GameStatus();
         player.generateCommandOptions();
 
         gameStatus.setError(false);
