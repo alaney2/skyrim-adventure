@@ -19,15 +19,14 @@ import java.util.Map;
 public class AdventureTest {
     // ByteArrayOutputStream and PrintStream are used to test console output.
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
-    private final PrintStream originalErr = System.err;
 
     private static Gson gson;
     private static Reader reader;
     private static Layout layout;
     private static Player player;
     private static Map<String, Location> locationDictionary;
+    GameEngine gameEngine;
 
     // Setting up tests.
 
@@ -37,10 +36,9 @@ public class AdventureTest {
         reader = new FileReader("src/main/resources/skyrim.json");
         layout = gson.fromJson(reader, Layout.class);
         locationDictionary = Layout.generateLocationDictionary(layout);
-        player = new Player(locationDictionary.get(layout.getStartingLocation()), new ArrayList<>());
-//        GameEngine.loadJson();
-//        GameEngine.createLocationDictionary();
-//        GameEngine.createPlayer();
+        gameEngine = new GameEngine();
+        gameEngine.loadJson();
+        gameEngine.createPlayer();
     }
 
     @Before

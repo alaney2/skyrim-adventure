@@ -60,6 +60,10 @@ public class Location {
         return directionDictionary;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<String> getAvailableDirectionNames() {
         List<String> availableDirectionNames = new ArrayList<>();
         for (Direction direction: directions) {
@@ -82,7 +86,10 @@ public class Location {
         return itemDictionary;
     }
 
-
+    /**
+     *
+     * @return
+     */
     public List<String> getAvailableItemsToTake() {
         List<String> availableItems = new ArrayList<>();
         for (Item item: items) {

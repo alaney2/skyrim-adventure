@@ -11,13 +11,11 @@ import java.util.*;
 
 public class GameEngine {
     private static Layout layout;
-    public static Map<String, Location> locationDictionary;
-    public Player player;
-    public GameStatus gameStatus;
+    private static Map<String, Location> locationDictionary;
+    private Player player;
+    private GameStatus gameStatus;
 
-    public static Layout getLayout() {
-        return layout;
-    }
+    public static Map<String, Location> getLocationDictionary() { return locationDictionary; }
 
     public Player getPlayer() {
         return player;
@@ -27,9 +25,13 @@ public class GameEngine {
         return gameStatus;
     }
 
+    public static Layout getLayout() {
+        return layout;
+    }
+
     public GameEngine() {
         loadJson();
-        createLocationDictionary();
+        locationDictionary = Layout.generateLocationDictionary(layout);
         createPlayer();
         createGameStatus();
     }
@@ -79,12 +81,8 @@ public class GameEngine {
     }
 
     /**
-     * Creates a location dictionary which maps name of location to its location object.
+     * Creates a GameStatus with every field except for id.
      */
-    public void createLocationDictionary() {
-        locationDictionary = Layout.generateLocationDictionary(layout);
-    }
-
     public void createGameStatus() {
         gameStatus = new GameStatus();
         player.generateCommandOptions();

@@ -13,28 +13,28 @@ public class Player {
         this.inventory = inventory;
     }
 
-    public void setEndingLocation(Location endingLocation) {
-        this.endingLocation = endingLocation;
-    }
-
     public Location getCurrentLocation() {
         return currentLocation;
-    }
-
-    public void setCurrentLocation(Location currentLocation) {
-        this.currentLocation = currentLocation;
     }
 
     public List<Item> getInventory() {
         return inventory;
     }
 
-    public void setInventory(List<Item> inventory) {
-        this.inventory = inventory;
-    }
-
     public Map<String, List<String>> getCommandOptions() {
         return commandOptions;
+    }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+
+    public void setEndingLocation(Location endingLocation) {
+        this.endingLocation = endingLocation;
+    }
+
+    public void setInventory(List<Item> inventory) {
+        this.inventory = inventory;
     }
 
     /**
@@ -77,12 +77,12 @@ public class Player {
                 break;
 
             case "stormcloak":
-                currentLocation = GameEngine.locationDictionary.get("Helgen");
+                currentLocation = GameEngine.getLocationDictionary().get("Helgen");
                 break;
 
             case "imperial":
-                currentLocation = GameEngine.locationDictionary.get("HelgenRalofExecuted");
-                endingLocation = GameEngine.locationDictionary.get("Solitude");
+                currentLocation = GameEngine.getLocationDictionary().get("HelgenRalofExecuted");
+                endingLocation = GameEngine.getLocationDictionary().get("Solitude");
                 break;
             default:
                 System.out.println("Game should not reach this point!");
@@ -197,6 +197,10 @@ public class Player {
         }
     }
 
+    /**
+     * Creates a list of item names in inventory.
+     * @return list of type String containing item names
+     */
     public List<String> getAvailableItemsToDrop() {
         List<String> availableItems = new ArrayList<>();
         for (Item item: inventory) {
@@ -205,6 +209,10 @@ public class Player {
         return availableItems;
     }
 
+    /**
+     * Gets current location's description, available direction names, and items visible.
+     * @return String of location information
+     */
     public String getCurrentLocationInfo() {
         String getDescription = currentLocation.getDescription();
         String availableDirections = "You can go: " + Location.getFormattedStringOfAvailableDirections(currentLocation);
@@ -212,6 +220,9 @@ public class Player {
         return getDescription + "\n" + availableDirections + "\n" + itemsVisible;
     }
 
+    /**
+     * Generates a map of command options the player can execute.
+     */
     public void generateCommandOptions() {
         commandOptions = new HashMap<>();
         List<String> availableDirectionNames = currentLocation.getAvailableDirectionNames();
