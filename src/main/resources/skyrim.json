@@ -1,6 +1,7 @@
 {
   "startingLocation": "HelgenStart",
   "endingLocation": "Windhelm",
+  "videoUrl": "https://www.youtube.com/watch?v=aQeIYVM3YBM",
   "locations": [
     {
       "name": "HelgenStart",
@@ -29,6 +30,10 @@
           "location": "Ivarstead"
         },
         {
+          "directionName": "South",
+          "location": "SkyrimShuffle"
+        },
+        {
           "directionName": "West",
           "location": "Falkreath"
         }
@@ -39,6 +44,17 @@
         },
         {
           "itemName" : "WoodenDoor"
+        }
+      ]
+    },
+    {
+      "name": "SkyrimShuffle",
+      "description": "DO THE SKYRIM SHUFFLE",
+      "imageUrl": "https://media3.giphy.com/media/sjT0aiK8yWmMU/giphy-downsized-large.gif",
+      "directions": [
+        {
+          "directionName": "North",
+          "location": "Helgen"
         }
       ]
     },

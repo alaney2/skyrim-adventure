@@ -1,6 +1,7 @@
 package student.server;
 
 import student.adventure.GameEngine;
+import student.adventure.Layout;
 import student.adventure.Location;
 
 import java.io.FileNotFoundException;
@@ -59,7 +60,7 @@ public class SkyrimAdventureService implements AdventureService {
             gameStatus.setId(id);
             gameStatus.setMessage(gameEngine.getPlayer().getCurrentLocation().getDescription());
             gameStatus.setImageUrl(gameEngine.getPlayer().getCurrentLocation().getImageUrl());
-            gameStatus.setVideoUrl("");
+            gameStatus.setVideoUrl(GameEngine.getLayout().getVideoUrl());
             gameStatus.setState(new AdventureState());
             gameStatus.setCommandOptions(commandOptions);
 
