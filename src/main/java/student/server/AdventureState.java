@@ -17,9 +17,13 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize
 public class AdventureState {
     private String inventory;
+    private String stupidShit;
 
     public AdventureState(String inventory) {
         this.inventory = inventory;
     }
 
+    public String getInventory() { return inventory; }
+
 }
+
