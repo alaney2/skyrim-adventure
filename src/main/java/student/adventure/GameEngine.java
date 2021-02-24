@@ -5,6 +5,7 @@ import student.server.AdventureState;
 import student.server.GameStatus;
 
 import java.io.FileReader;
+import java.io.InvalidObjectException;
 import java.io.Reader;
 import java.util.*;
 
@@ -30,7 +31,7 @@ public class GameEngine {
     }
 
     public GameEngine() {
-        loadJson();
+        loadJson("src/main/resources/skyrim.json");
         locationDictionary = Layout.generateLocationDictionary(layout);
         createPlayer();
         createGameStatus();
@@ -40,7 +41,6 @@ public class GameEngine {
      * Method that starts running the game.
      */
     public void runGame() {
-        checkJsonForNull();
         Message.printGameIntro();
 
         System.out.println(player.getCurrentLocationInfo());
@@ -62,11 +62,13 @@ public class GameEngine {
     /**
      * Loads JSON into existence.
      */
-    public static void loadJson() {
+    public static void loadJson(String filePath) {
         Gson gson = new Gson();
         try {
-            Reader reader = new FileReader("src/main/resources/skyrim.json");
+            Reader reader = new FileReader(filePath);
             layout = gson.fromJson(reader, Layout.class);
+            checkJsonForNull(layout);
+            checkJsonRooms(layout);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -96,9 +98,28 @@ public class GameEngine {
     }
 
     /**
-     * Checks if anything in the Json file is null and throws NullPointerException() if there is
+     * Checks if Json has locations with directions leading to a valid location.
+     * @param layout layout of class Layout
      */
-    public static void checkJsonForNull() {
+    public static void checkJsonRooms(Layout layout) {
+        Set<String> locationNames = new HashSet<>();
+        for (Location location: layout.getLocations()) {
+            locationNames.add(location.getName());
+        }
+        for (Location location: layout.getLocations()) {
+            for (Direction direction: location.getDirections()) {
+                if (!locationNames.contains(direction.getDirectionName())) {
+                    throw new IllegalArgumentException("No location found");
+                }
+            }
+        }
+    }
+
+    /**
+     * Checks if anything in the Json file is null and throws NullPointerException() if there is
+     * @param layout layout of class Layout
+     */
+    public static void checkJsonForNull(Layout layout) {
         if (layout.getStartingLocation() == null) {
             throw new NullPointerException("Starting location");
         }

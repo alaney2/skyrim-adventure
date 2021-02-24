@@ -1,0 +1,55 @@
+{
+  "startingLocation": "MatthewsStreet",
+  "endingLocation": "Siebel1314",
+  "videoUrl": "",
+  "locations": [
+    {
+      "name": "MatthewsStreet",
+      "description": "You are on Matthews, outside the Siebel Center",
+      "imageUrl": "",
+      "directions": [
+        {
+          "directionName": "East",
+          "room": "Nonexistent"
+        }
+      ],
+      "items": []
+    },
+    {
+      "name": "SiebelEntry",
+      "description": "You are in the west entry of Siebel Center. You can see the elevator, the ACM office, and hallways to the north and east.",
+      "imageUrl": "",
+      "directions": [
+        {
+          "directionName": "West",
+          "room": "MatthewsStreet"
+        },
+        {
+          "directionName": "Northeast",
+          "room": "AcmOffice"
+        },
+        {
+          "directionName": "North",
+          "room": "SiebelNorthHallway"
+        },
+        {
+          "directionName": "East",
+          "room": "SiebelEastHallway"
+        }
+      ],
+      "items": []
+    },
+    {
+      "name": "AcmOffice",
+      "description": "You are in the ACM office.  There are lots of friendly ACM people.",
+      "imageUrl": "",
+      "directions": [
+        {
+          "directionName": "South",
+          "room": "SiebelEntry"
+        }
+      ],
+      "items": []
+    }
+  ]
+}
