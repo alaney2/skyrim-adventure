@@ -44,6 +44,10 @@ public class Player {
     public void executeCommand(String[] arguments) {
         String command = arguments[0].toLowerCase();
         switch(command) {
+            case "quit":
+            case "exit":
+                break;
+
             case "go":
                 if (arguments.length < 2 || arguments[1] == null) {
                     System.out.println("Enter a direction to go");
@@ -84,6 +88,7 @@ public class Player {
                 currentLocation = GameEngine.getLocationDictionary().get("BloodyHelgen");
                 endingLocation = GameEngine.getLocationDictionary().get("Solitude");
                 break;
+
             default:
                 System.out.println("Game should not reach this point!");
         }
@@ -229,14 +234,14 @@ public class Player {
         List<String> availableItemsToTake = currentLocation.getAvailableItemsToTake();
         List<String> availableItemsToDrop = getAvailableItemsToDrop();
 
-        if (currentLocation.getName().equals("ChooseSides")) {
+        if (currentLocation.getName().equals("HelgenOutskirts")) {
             List<String> blankList = new ArrayList<>();
             blankList.add("");
             commandOptions.put("Imperial", blankList);
             commandOptions.put("Stormcloak", blankList);
         }
 
-        if (availableDirectionNames.size() > 0 && !currentLocation.getName().equals("ChooseSides")) {
+        if (availableDirectionNames.size() > 0 && !currentLocation.getName().equals("HelgenOutskirts")) {
             commandOptions.put("go", availableDirectionNames);
         }
         if (availableItemsToTake.size() > 0) {

@@ -2,6 +2,7 @@ package student.server;
 
 import student.adventure.GameEngine;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,7 +37,7 @@ public class SkyrimAdventureService implements AdventureService {
             gameStatus = gameEngine.getGameStatus();
             gameStatus.setId(id);
         } else {
-            gameStatus = new GameStatus(true, id, "", "", "", new AdventureState(), new HashMap<>());
+            gameStatus = new GameStatus(true, id, "", "", "", new AdventureState(""), new HashMap<>());
         }
         return gameStatus;
     }

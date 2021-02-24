@@ -47,6 +47,7 @@ public class GameEngine {
 
         String command;
         do {
+            System.out.println(player.getStringOfItemsInInventory());
             String[] arguments = UserInput.handleUserInput();
             command = arguments[0].toLowerCase();
             player.executeCommand(arguments);
