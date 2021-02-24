@@ -131,24 +131,23 @@ public class Location {
 
     /**
      * Creates a string of available items in the current location.
-     * @param location location to get items from
      * @return String of item names
      */
-    public static String getStringOfAvailableItems(Location location) {
-        final int NUMBER_OF_ITEMS = location.getItems().size();
+    public String getStringOfAvailableItems() {
+        final int NUMBER_OF_ITEMS = items.size();
 
         switch (NUMBER_OF_ITEMS) {
             case 0:
                 return "";
             case 1:
-                return location.getItems().get(0).getItemName();
+                return items.get(0).getItemName();
             default:
                 StringBuilder availableItemsBuilder = new StringBuilder();
                 for (int i = 0; i < NUMBER_OF_ITEMS - 1; i++) {
-                    availableItemsBuilder.append(location.getItems().get(i).getItemName());
+                    availableItemsBuilder.append(items.get(i).getItemName());
                     availableItemsBuilder.append(", ");
                 }
-                availableItemsBuilder.append(location.getItems().get(location.getItems().size() - 1).getItemName());
+                availableItemsBuilder.append(items.get(items.size() - 1).getItemName());
 
                 return availableItemsBuilder.toString();
         }
