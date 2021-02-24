@@ -2,7 +2,6 @@ package student.server;
 
 import student.adventure.GameEngine;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,14 +15,9 @@ public class SkyrimAdventureService implements AdventureService {
         this.id = id;
     }
 
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
 
-    public Map<Integer, GameEngine> getMapOfGamesRunning() {
-        return mapOfGamesRunning;
-    }
-
+    public Map<Integer, GameEngine> getMapOfGamesRunning() { return mapOfGamesRunning; }
 
     @Override
     public void reset() {
@@ -39,6 +33,7 @@ public class SkyrimAdventureService implements AdventureService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         return id++;
     }
 
@@ -48,12 +43,12 @@ public class SkyrimAdventureService implements AdventureService {
         if (mapOfGamesRunning.containsKey(id)) {
             GameEngine gameEngine = mapOfGamesRunning.get(id);
             gameEngine.createGameStatus();
-
             gameStatus = gameEngine.getGameStatus();
             gameStatus.setId(id);
         } else {
             gameStatus = new GameStatus(true, id, "", "", "", new AdventureState(""), new HashMap<>());
         }
+
         return gameStatus;
     }
 
@@ -63,6 +58,7 @@ public class SkyrimAdventureService implements AdventureService {
             mapOfGamesRunning.remove(id);
             return true;
         }
+
         return false;
     }
 

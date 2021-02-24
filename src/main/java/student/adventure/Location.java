@@ -69,6 +69,7 @@ public class Location {
         for (Direction direction: directions) {
             availableDirectionNames.add(direction.getDirectionName());
         }
+
         return availableDirectionNames;
     }
 
@@ -95,6 +96,7 @@ public class Location {
         for (Item item: items) {
             availableItems.add(item.getItemName());
         }
+
         return availableItems;
     }
 

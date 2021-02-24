@@ -9,6 +9,11 @@ import java.io.IOException;
 
 
 public class Main {
+    /**
+     * Starts the server and also runs game in console.
+     * @param args default
+     * @throws IOException for invalid json
+     */
     public static void main(String[] args) throws IOException {
         HttpServer server = AdventureServer.createServer(AdventureResource.class);
         server.start();

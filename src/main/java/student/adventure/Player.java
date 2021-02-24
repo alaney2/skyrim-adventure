@@ -211,6 +211,7 @@ public class Player {
         for (Item item: inventory) {
             availableItems.add(item.getItemName());
         }
+
         return availableItems;
     }
 
@@ -222,6 +223,7 @@ public class Player {
         String getDescription = currentLocation.getDescription();
         String availableDirections = "From here, you can go: " + Location.getFormattedStringOfAvailableDirections(currentLocation);
         String itemsVisible = "Items visible: " + currentLocation.getStringOfAvailableItems();
+
         return getDescription + "\n" + availableDirections + "\n" + itemsVisible;
     }
 

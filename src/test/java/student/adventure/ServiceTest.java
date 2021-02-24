@@ -39,10 +39,15 @@ public class ServiceTest {
     }
 
     @Test
-    public void getGame() {
+    public void getExistingGame() {
         service.newGame();
         GameStatus gameStatus = service.getGame(0);
         assertFalse(gameStatus.getError());
+    }
+
+    @Test
+    public void getNonexistentGame() {
+        assertTrue(service.getGame(0).getError());
     }
 
     @Test

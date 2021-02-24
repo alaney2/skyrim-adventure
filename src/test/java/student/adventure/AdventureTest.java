@@ -1,6 +1,5 @@
 package student.adventure;
 
-import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertEquals;
 
 
@@ -89,6 +88,12 @@ public class AdventureTest {
     }
 
     @Test
+    public void goGolf() {
+        player.executeCommand(new String[] {"golf"});
+        assertEquals("HelgenStart", player.getCurrentLocation().getName());
+    }
+
+    @Test
     public void goNullDirection() {
         player.executeCommand(new String[] {"go", null});
         assertEquals("HelgenStart", player.getCurrentLocation().getName());
@@ -106,6 +111,11 @@ public class AdventureTest {
         player.goDirection("southnorth");
         String output = "You can't go \"Southnorth\"!\n";
         assertEquals(output, outContent.toString());
+    }
+
+    @Test
+    public void goToEndingLocation() {
+        player.setCurrentLocation(locationDictionary.get("Windhelm"));
     }
 
     // Testing "examine" command.

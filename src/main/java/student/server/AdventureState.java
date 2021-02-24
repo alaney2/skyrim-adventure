@@ -24,6 +24,5 @@ public class AdventureState {
     }
 
     public String getInventory() { return inventory; }
-
 }
 
