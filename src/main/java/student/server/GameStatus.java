@@ -87,6 +87,10 @@ public class GameStatus {
         return commandOptions;
     }
 
+    public boolean getError() {
+        return error;
+    }
+
     public void setError(boolean error) {
         this.error = error;
     }

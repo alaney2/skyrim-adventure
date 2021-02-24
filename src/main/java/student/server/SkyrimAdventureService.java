@@ -12,6 +12,19 @@ public class SkyrimAdventureService implements AdventureService {
 
     public SkyrimAdventureService() { }
 
+    public SkyrimAdventureService(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public Map<Integer, GameEngine> getMapOfGamesRunning() {
+        return mapOfGamesRunning;
+    }
+
+
     @Override
     public void reset() {
         id = 0;
@@ -59,9 +72,5 @@ public class SkyrimAdventureService implements AdventureService {
         String commandName = command.getCommandName();
         String commandValue = command.getCommandValue();
         gameEngine.getPlayer().executeCommand(new String[] {commandName, commandValue});
-    }
-
-    public int getId() {
-        return id;
     }
 }
