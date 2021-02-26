@@ -22,7 +22,7 @@ public class SkyrimAdventureService implements AdventureService {
     @Override
     public void reset() {
         id = 0;
-        mapOfGamesRunning = new HashMap<>();
+        mapOfGamesRunning.clear();
     }
 
     @Override
@@ -54,12 +54,7 @@ public class SkyrimAdventureService implements AdventureService {
 
     @Override
     public boolean destroyGame(int id) {
-        if (mapOfGamesRunning.containsKey(id)) {
-            mapOfGamesRunning.remove(id);
-            return true;
-        }
-
-        return false;
+         return mapOfGamesRunning.remove(id) != null;
     }
 
     @Override
