@@ -1,5 +1,5 @@
-# Amazing Adventures Template
+# Reference
+https://courses.grainger.illinois.edu/cs126/sp2021/assignments/api-adventures/
 
-A sample JSON has been provided for you in `src/main/resources/siebel.json`
-
-For week 1: don't modify any of the non-JSON files in `resources`, and don't worry about the `server` folders.
+# UI Page:
+https://courses.grainger.illinois.edu/cs126/sp2021/adventure/#/
